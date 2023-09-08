@@ -27,10 +27,7 @@ header = T,
 row.names = 1,
 check.names = F
 )
-#
-#filter common genes
 
-#we need to eliminate the first cell of colnames
 
 write.table(expression,
 paste0(wkdir,
@@ -40,12 +37,15 @@ col.names = T
 , quote = F
 , sep = "\t")
 
+
+#Select genes of estimate
 filterCommonGenes(input.f= paste0(wkdir,
 "/preprocess/transcriptome/expression.estimate.txt"),
 output.f= paste0(wkdir,
 "/preprocess/transcriptome/estimate_genes.txt"),
 id="GeneSymbol")
 
+#Calculate estimate score
 estimateScore(paste0(wkdir,
 "/preprocess/transcriptome/estimate_genes.txt"), 
 paste0(wkdir,
@@ -60,13 +60,14 @@ sep = "\t",
  header =  T,
  skip = 2)
 
-
+# Rename samples code
  colnames(estimate) <- gsub("X", "", colnames(estimate))
  colnames(estimate) <- gsub("\\.", " ", colnames(estimate))
 
 estimate <- t(estimate)
 estimate <- estimate[-1,]
 
+#add estimate results into clinical data
 clinical.data <- merge(clinical.data,
 estimate,
 by.x = "CLINICAL_TRIAL_CODE",
