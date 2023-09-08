@@ -1,0 +1,233 @@
+{
+  "paths": [
+    {
+      "_path": "lib/R/library/estimate/COPYRIGHTS",
+      "path_type": "hardlink",
+      "sha256": "16f57ed20346f44ef3c47a221e33469254935514b4170f5960ca911d38f6bf98",
+      "size_in_bytes": 355
+    },
+    {
+      "_path": "lib/R/library/estimate/DESCRIPTION",
+      "path_type": "hardlink",
+      "sha256": "0f4b815c5c172495c634a16da8e6900b1d0d2c7dcced981d973927db16ccc9e2",
+      "size_in_bytes": 816
+    },
+    {
+      "_path": "lib/R/library/estimate/INDEX",
+      "path_type": "hardlink",
+      "sha256": "0b0adab4861f0fd5a0da620e47358583151ef7965d2ee73d3407170eaa5d50de",
+      "size_in_bytes": 446
+    },
+    {
+      "_path": "lib/R/library/estimate/Meta/Rd.rds",
+      "path_type": "hardlink",
+      "sha256": "7223c9a16955874e218e8559ce0743769981654c04ef5336cae8311ab5ee31ea",
+      "size_in_bytes": 573
+    },
+    {
+      "_path": "lib/R/library/estimate/Meta/data.rds",
+      "path_type": "hardlink",
+      "sha256": "eb741682adb3a85cda75bf6df11e051ac7a4d31153e03e89fca0482d7a8dab0e",
+      "size_in_bytes": 164
+    },
+    {
+      "_path": "lib/R/library/estimate/Meta/features.rds",
+      "path_type": "hardlink",
+      "sha256": "a8511fb75963eff39031f5f12c65b48efabc3a930e124ab7ae0359362ac90275",
+      "size_in_bytes": 113
+    },
+    {
+      "_path": "lib/R/library/estimate/Meta/hsearch.rds",
+      "path_type": "hardlink",
+      "sha256": "dd80dc54b2d72186c53305ec6893f54e00dfa5ea7fa9c9ae443b5805079c5fba",
+      "size_in_bytes": 558
+    },
+    {
+      "_path": "lib/R/library/estimate/Meta/links.rds",
+      "path_type": "hardlink",
+      "sha256": "3b4cd25e37ec0c69b0dd78f5ba0dbaeed456d391f1352b85d1929a60a1e4d72a",
+      "size_in_bytes": 256
+    },
+    {
+      "_path": "lib/R/library/estimate/Meta/nsInfo.rds",
+      "path_type": "hardlink",
+      "sha256": "42383858bfaa8d1dabe7d1b38c722fa3ac9195e0e802e7857077805b1e78110c",
+      "size_in_bytes": 343
+    },
+    {
+      "_path": "lib/R/library/estimate/Meta/package.rds",
+      "path_type": "hardlink",
+      "sha256": "b696036d6c38f7ec168d12915b033fffe1b14d7c95293b7a9658654a4e8a7a26",
+      "size_in_bytes": 866
+    },
+    {
+      "_path": "lib/R/library/estimate/Meta/vignette.rds",
+      "path_type": "hardlink",
+      "sha256": "8919d01be5250d5f23f2bff4d6dc7e0c8067414b20333b32205bcecb3895633b",
+      "size_in_bytes": 233
+    },
+    {
+      "_path": "lib/R/library/estimate/NAMESPACE",
+      "path_type": "hardlink",
+      "sha256": "139cd8a2dc771f3c3c0fbe1a5a30d6c3c0b7fcc4d276dad9431626d7376773a2",
+      "size_in_bytes": 462
+    },
+    {
+      "_path": "lib/R/library/estimate/NEWS.Rd",
+      "path_type": "hardlink",
+      "sha256": "8f04b308b2664d84efea03cea8be4ba2cd4a4476a0340699be78f13e8812d0ff",
+      "size_in_bytes": 4346
+    },
+    {
+      "_path": "lib/R/library/estimate/R/estimate",
+      "path_type": "hardlink",
+      "sha256": "2fb8b16be23c820daf2e51b7ddfef61ca4978e561b1d228d546d1b356041f79e",
+      "size_in_bytes": 1056
+    },
+    {
+      "_path": "lib/R/library/estimate/R/estimate.rdb",
+      "path_type": "hardlink",
+      "sha256": "1e0faecef6e672e820f19450c539a82498c38e60d5367c988dfed7d6ba33e69d",
+      "size_in_bytes": 17946
+    },
+    {
+      "_path": "lib/R/library/estimate/R/estimate.rdx",
+      "path_type": "hardlink",
+      "sha256": "1af90651dd1894f292cdb7f1c88f7c4fefe2443da9efeb04ea1072bbb8408091",
+      "size_in_bytes": 342
+    },
+    {
+      "_path": "lib/R/library/estimate/data/Rdata.rdb",
+      "path_type": "hardlink",
+      "sha256": "e8ce56eef092f52816b6f6bfd6ec49fd315cedab1fa6790b442f7ccaec4250a9",
+      "size_in_bytes": 358049
+    },
+    {
+      "_path": "lib/R/library/estimate/data/Rdata.rds",
+      "path_type": "hardlink",
+      "sha256": "3e212264758aa5a7148c064df2b65ccea88f1f1b2f692c34f9d08e1126303a43",
+      "size_in_bytes": 111
+    },
+    {
+      "_path": "lib/R/library/estimate/data/Rdata.rdx",
+      "path_type": "hardlink",
+      "sha256": "ed1d94320a662f6829a5198c562c93dbe3fc23b161a81883daa23eda680df29e",
+      "size_in_bytes": 181
+    },
+    {
+      "_path": "lib/R/library/estimate/doc/ESTIMATE_Vignette.R",
+      "path_type": "hardlink",
+      "sha256": "04706c6f1c5d5e9359856a089a03e1ef13fb4c17866dbbe607f1756013f3e652",
+      "size_in_bytes": 1365
+    },
+    {
+      "_path": "lib/R/library/estimate/doc/ESTIMATE_Vignette.Rnw",
+      "path_type": "hardlink",
+      "sha256": "cdd723a12d0740acc2fd4e8e5dc5d22df1e1ea8f966cc15f06a1f2ef2b91f269",
+      "size_in_bytes": 2525
+    },
+    {
+      "_path": "lib/R/library/estimate/doc/ESTIMATE_Vignette.pdf",
+      "path_type": "hardlink",
+      "sha256": "97498a63b0b3a76d9031d81e2237ed53dbfb68576908e30cae80bbe822ea8eae",
+      "size_in_bytes": 125490
+    },
+    {
+      "_path": "lib/R/library/estimate/doc/index.html",
+      "path_type": "hardlink",
+      "sha256": "a0c4cabcd696208527310a0a38822e5b935a9ada168bb696a8009cae26acf587",
+      "size_in_bytes": 1380
+    },
+    {
+      "_path": "lib/R/library/estimate/extdata/PurityDataAffy.txt",
+      "path_type": "hardlink",
+      "sha256": "6730702261d1122d500dad4d8d3d44a03f2f895df9e401b70d680917467b0e8c",
+      "size_in_bytes": 80758
+    },
+    {
+      "_path": "lib/R/library/estimate/extdata/SI_geneset.gmt",
+      "path_type": "hardlink",
+      "sha256": "bfd34f3f811656a5781521d9e59b513bc34c45692ad35afdd81c3879d7a187ca",
+      "size_in_bytes": 1738
+    },
+    {
+      "_path": "lib/R/library/estimate/extdata/common_genes.txt",
+      "path_type": "hardlink",
+      "sha256": "47acd26186e7e162f868612fc719f206b3b6bbeccd7cf6c4cc50d090c3d2ad82",
+      "size_in_bytes": 749048
+    },
+    {
+      "_path": "lib/R/library/estimate/extdata/sample_estimate.gct",
+      "path_type": "hardlink",
+      "sha256": "5919f01d0c1f43520c6fa29f9d1000e86c32e085123b11a7048397076115dfbb",
+      "size_in_bytes": 674
+    },
+    {
+      "_path": "lib/R/library/estimate/extdata/sample_input.gct",
+      "path_type": "hardlink",
+      "sha256": "3455e8637d05755bf95bddcd40b1f5a53b8137d1b90443a048e5a4a177cb91bb",
+      "size_in_bytes": 3152756
+    },
+    {
+      "_path": "lib/R/library/estimate/extdata/sample_input.txt",
+      "path_type": "hardlink",
+      "sha256": "4eac1c2939d810174293d5dd0b0befe1f15c8e1ce3418489461b4b23768054e6",
+      "size_in_bytes": 3023734
+    },
+    {
+      "_path": "lib/R/library/estimate/extdata/sample_purity.gct",
+      "path_type": "hardlink",
+      "sha256": "0d922cc81d03335aec909fc697fe6520359298aad54b94403fb3d9c8cc9659f4",
+      "size_in_bytes": 919
+    },
+    {
+      "_path": "lib/R/library/estimate/help/AnIndex",
+      "path_type": "hardlink",
+      "sha256": "6624504b9b9f2fa848a637233aafb14d75f23400981f79281d9d07c3f994c27e",
+      "size_in_bytes": 295
+    },
+    {
+      "_path": "lib/R/library/estimate/help/aliases.rds",
+      "path_type": "hardlink",
+      "sha256": "8b85200faf4e16ee41a05eca883c97fadf761a3b45d4abaed094f8b154ce1f5d",
+      "size_in_bytes": 227
+    },
+    {
+      "_path": "lib/R/library/estimate/help/estimate.rdb",
+      "path_type": "hardlink",
+      "sha256": "817a838984bd75edd54c90b98b7dbe56d5b6aa202f4e88ef6de2b27834cdf224",
+      "size_in_bytes": 18982
+    },
+    {
+      "_path": "lib/R/library/estimate/help/estimate.rdx",
+      "path_type": "hardlink",
+      "sha256": "62056c547caf41719a27cbc649b95ea0e5ee72b2d971592eea65f56e3ba85338",
+      "size_in_bytes": 371
+    },
+    {
+      "_path": "lib/R/library/estimate/help/paths.rds",
+      "path_type": "hardlink",
+      "sha256": "e243f9543b288ad11b0f57dda34206c0b203c40c64fe58eede218c20e2e83633",
+      "size_in_bytes": 262
+    },
+    {
+      "_path": "lib/R/library/estimate/html/00Index.html",
+      "path_type": "hardlink",
+      "sha256": "4397b5ad10c3d3b304b4fd1cea6d687aa43549f60d05a6cc8c20b03052232689",
+      "size_in_bytes": 2315
+    },
+    {
+      "_path": "lib/R/library/estimate/html/R.css",
+      "path_type": "hardlink",
+      "sha256": "0f4849ab1757247808d54da2c371e992364371c942ad7d629dae8d62327ed068",
+      "size_in_bytes": 1335
+    },
+    {
+      "_path": "lib/R/library/estimate/util/makeData.R",
+      "path_type": "hardlink",
+      "sha256": "4ca8541865bff939a33aa3503220e49b2862d7f0d6d909e684a94d5a31d03da5",
+      "size_in_bytes": 1408
+    }
+  ],
+  "paths_version": 1
+}

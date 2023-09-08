@@ -1,0 +1,40 @@
+package:
+  name: mixedclust
+  version: "1.0.2"
+
+source:
+  url:
+    - https://cran.r-project.org/src/contrib/mixedClust_1.0.2.tar.gz
+
+
+build:
+  number: 6
+  rpaths:
+    - lib/R/lib/
+    - lib/
+
+requirements:
+  host:
+    - r-base=4.2.2
+    - r-rcpp=1.0.9
+    - r-fda=6.0.5
+    - r-rcppprogress=0.4.2
+    - r-rcpparmadillo=0.11.4.0.1
+  run:
+    - r-base
+    - r-rcpp=1.0.9
+    - r-fda=6.0.5
+    - r-rcppprogress=0.4.2
+    - r-rcpparmadillo=0.11.4.0.1
+test:
+  commands:
+    - $R -e "library('mixedClust')" # [not win]
+    - "\"%R%\" -e \"library('mixedClust')\"" # [win]
+
+about:
+  home: https://r-forge.r-project.org
+  license: BSD
+  summary: mixedClust
+extra:
+  recipe-maintainers:
+    - Carlos

@@ -1,0 +1,16 @@
+name: paneles
+channels:
+  - bioconda
+  - defaults
+  - r
+  - conda-forge
+dependencies:
+  - r-patchwork=1.1.2
+  - r-pdftools=3.3.3
+  - r-ggplot2=3.4.0
+  - r-magick
+  - r-ggplot2
+  - r-magrittr
+  - jpeg=9e
+  - r-rsvg
+  - r-gridextra

@@ -1,0 +1,251 @@
+{
+  "paths": [
+    {
+      "_path": "lib/R/library/figpatch/DESCRIPTION",
+      "path_type": "hardlink",
+      "sha256": "744d6b6fe86709a74422d01841352b7e4dc0cbb3f801d57700894534ca72dcfb",
+      "size_in_bytes": 1125
+    },
+    {
+      "_path": "lib/R/library/figpatch/INDEX",
+      "path_type": "hardlink",
+      "sha256": "dacaecc0195a6d43093f149353526f8b81966712d853d09e5f0660cfab87b72c",
+      "size_in_bytes": 273
+    },
+    {
+      "_path": "lib/R/library/figpatch/LICENSE",
+      "path_type": "hardlink",
+      "sha256": "7d6c010c1df5b166613fd886f8e9a120c689b01922b8096cc9159228a588ba24",
+      "size_in_bytes": 44
+    },
+    {
+      "_path": "lib/R/library/figpatch/Meta/Rd.rds",
+      "path_type": "hardlink",
+      "sha256": "3a472e53a33449cfa0a893708f6c94a395772b2eb8c29c10740a6b1e987ef52d",
+      "size_in_bytes": 411
+    },
+    {
+      "_path": "lib/R/library/figpatch/Meta/features.rds",
+      "path_type": "hardlink",
+      "sha256": "04eebe0ed07cb3a56d7c6e12d4dfd405eb443d53e3d8e6dfbb3fe39af71e0e97",
+      "size_in_bytes": 122
+    },
+    {
+      "_path": "lib/R/library/figpatch/Meta/hsearch.rds",
+      "path_type": "hardlink",
+      "sha256": "19f9949d60a8d4eaeac4b2cefdbde231b3519bed344b68084685954cec3e5ac3",
+      "size_in_bytes": 422
+    },
+    {
+      "_path": "lib/R/library/figpatch/Meta/links.rds",
+      "path_type": "hardlink",
+      "sha256": "9ded80cb18f2dc56f6f6e64112bd503e7d0e1f6bcace8c4fe4eda4961e6fbd5c",
+      "size_in_bytes": 169
+    },
+    {
+      "_path": "lib/R/library/figpatch/Meta/nsInfo.rds",
+      "path_type": "hardlink",
+      "sha256": "bd559aa16db0c6507ccbf8831fdb26cd09196418507307b09fc43302a0d6a5ee",
+      "size_in_bytes": 246
+    },
+    {
+      "_path": "lib/R/library/figpatch/Meta/package.rds",
+      "path_type": "hardlink",
+      "sha256": "d456f88b1581c825ece81ae265eaa0c07cf34b8aa286c078211662dd9df9a3cf",
+      "size_in_bytes": 1094
+    },
+    {
+      "_path": "lib/R/library/figpatch/NAMESPACE",
+      "path_type": "hardlink",
+      "sha256": "dee3276d268a057725a16e91be6358f249a219b67caf31b99e82ca89de31fef9",
+      "size_in_bytes": 166
+    },
+    {
+      "_path": "lib/R/library/figpatch/NEWS.md",
+      "path_type": "hardlink",
+      "sha256": "369a120734c6bb140dcffeda8a5482d073d512587b01a0da52eeaf5d168f5e6c",
+      "size_in_bytes": 475
+    },
+    {
+      "_path": "lib/R/library/figpatch/R/figpatch",
+      "path_type": "hardlink",
+      "sha256": "570ca456b280cdeb201ef5ebdf22dc8f80092e2c0c68e33c7f73340e420f3759",
+      "size_in_bytes": 1058
+    },
+    {
+      "_path": "lib/R/library/figpatch/R/figpatch.rdb",
+      "path_type": "hardlink",
+      "sha256": "6e0a1db289dc8fdb79bfb425c3f4e14b35c58e61dbe616d34da6266295e821d7",
+      "size_in_bytes": 17116
+    },
+    {
+      "_path": "lib/R/library/figpatch/R/figpatch.rdx",
+      "path_type": "hardlink",
+      "sha256": "5a8f4b103929451bb4c09cf5833ca31c564a1cef7f8719776c1803b1397c1ef2",
+      "size_in_bytes": 380
+    },
+    {
+      "_path": "lib/R/library/figpatch/WORDLIST",
+      "path_type": "hardlink",
+      "sha256": "0bea9deaffa7941cb0b57cd10bbf7df1a619298eb511fb2debfd6ee56090557b",
+      "size_in_bytes": 152
+    },
+    {
+      "_path": "lib/R/library/figpatch/extdata/3a.png",
+      "path_type": "hardlink",
+      "sha256": "96ae508ad12b14f63735bc5954e5fce196736056affaaa953c15979d827e8132",
+      "size_in_bytes": 24501
+    },
+    {
+      "_path": "lib/R/library/figpatch/extdata/3c.png",
+      "path_type": "hardlink",
+      "sha256": "642e6e67a3832d56c3c37fce11c4901764a42dfb0b6f5f1367877065d9b1869c",
+      "size_in_bytes": 31035
+    },
+    {
+      "_path": "lib/R/library/figpatch/extdata/fig.png",
+      "path_type": "hardlink",
+      "sha256": "cfac80185aed2b1c2a9040f45611ef72dd1b4b909b8ab8a24a9f8603d36aa326",
+      "size_in_bytes": 199835
+    },
+    {
+      "_path": "lib/R/library/figpatch/help/AnIndex",
+      "path_type": "hardlink",
+      "sha256": "838732f846a399f6abe25b70480119ea984e85aaa6871a2973da4e676e9e0cda",
+      "size_in_bytes": 87
+    },
+    {
+      "_path": "lib/R/library/figpatch/help/aliases.rds",
+      "path_type": "hardlink",
+      "sha256": "fb41c9cf58fc5cc8ef4cfdcf93af041f335296b8c5d1cbb6cde82b5ada7c1b50",
+      "size_in_bytes": 122
+    },
+    {
+      "_path": "lib/R/library/figpatch/help/figpatch.rdb",
+      "path_type": "hardlink",
+      "sha256": "9d6173f707da316e70328f7a53ca0a4159cfa043637f9ace8767bddd872c81ea",
+      "size_in_bytes": 13753
+    },
+    {
+      "_path": "lib/R/library/figpatch/help/figpatch.rdx",
+      "path_type": "hardlink",
+      "sha256": "8be3fd6e2f90568f1105e561c308bfe7cb331e1599a6269bdf804a93ad3e393d",
+      "size_in_bytes": 277
+    },
+    {
+      "_path": "lib/R/library/figpatch/help/figures/README-figpatch-1.png",
+      "path_type": "hardlink",
+      "sha256": "956144213a10683ac9e7bf54d699a2216aa0161ac14beab2255dec50713c3cd7",
+      "size_in_bytes": 247283
+    },
+    {
+      "_path": "lib/R/library/figpatch/help/figures/README-unnamed-chunk-10-1.png",
+      "path_type": "hardlink",
+      "sha256": "37090de5ba171880d8998be0696794b3bbee7feb8556480b39a58303e2856ba1",
+      "size_in_bytes": 213324
+    },
+    {
+      "_path": "lib/R/library/figpatch/help/figures/README-unnamed-chunk-11-1.png",
+      "path_type": "hardlink",
+      "sha256": "b2a315c299e483fa916f1600c2083193eae0f22a504056665eff11f26f6f86f9",
+      "size_in_bytes": 252182
+    },
+    {
+      "_path": "lib/R/library/figpatch/help/figures/README-unnamed-chunk-12-1.png",
+      "path_type": "hardlink",
+      "sha256": "0acd7bca17110bfc4d38aee9d649405130b38fc8ae713841f8b462530c6e1cff",
+      "size_in_bytes": 252143
+    },
+    {
+      "_path": "lib/R/library/figpatch/help/figures/README-unnamed-chunk-13-1.png",
+      "path_type": "hardlink",
+      "sha256": "0c6f0afdd7d5b4b561be0c6a34057532de5a878d62e042e6e5906fb507a6444d",
+      "size_in_bytes": 254326
+    },
+    {
+      "_path": "lib/R/library/figpatch/help/figures/README-unnamed-chunk-14-1.png",
+      "path_type": "hardlink",
+      "sha256": "338b7b818f1a1b162dd6eb94ce0b4cb3e693e0991f1cd5f72b4d53c9d9f21f2b",
+      "size_in_bytes": 604086
+    },
+    {
+      "_path": "lib/R/library/figpatch/help/figures/README-unnamed-chunk-15-1.png",
+      "path_type": "hardlink",
+      "sha256": "338b7b818f1a1b162dd6eb94ce0b4cb3e693e0991f1cd5f72b4d53c9d9f21f2b",
+      "size_in_bytes": 604086
+    },
+    {
+      "_path": "lib/R/library/figpatch/help/figures/README-unnamed-chunk-16-1.png",
+      "path_type": "hardlink",
+      "sha256": "cdf6fa5efa3e3a76f48837e2ba84dfd8c13f9123390f871765c094219b31c10e",
+      "size_in_bytes": 539110
+    },
+    {
+      "_path": "lib/R/library/figpatch/help/figures/README-unnamed-chunk-17-1.png",
+      "path_type": "hardlink",
+      "sha256": "c3bd58cf8478339e8f474334e0291e06499910526619bde49071d9b3a32f1815",
+      "size_in_bytes": 373099
+    },
+    {
+      "_path": "lib/R/library/figpatch/help/figures/README-unnamed-chunk-2-1.png",
+      "path_type": "hardlink",
+      "sha256": "539965d51cbe15ecfd0c9db63328f315e4adcf84d03c7552eb491012e89cd0d8",
+      "size_in_bytes": 248133
+    },
+    {
+      "_path": "lib/R/library/figpatch/help/figures/README-unnamed-chunk-3-1.png",
+      "path_type": "hardlink",
+      "sha256": "1e1a34b11ea3645bec0fd14eaa09888ac203f0c9880c42fcb80ceed2c193b0d2",
+      "size_in_bytes": 282589
+    },
+    {
+      "_path": "lib/R/library/figpatch/help/figures/README-unnamed-chunk-4-1.png",
+      "path_type": "hardlink",
+      "sha256": "c8acddfb2a5d9502db4baeecdfe7e8e9ead465c7f258f38bcc17f5e6a601f4e7",
+      "size_in_bytes": 215205
+    },
+    {
+      "_path": "lib/R/library/figpatch/help/figures/README-unnamed-chunk-6-1.png",
+      "path_type": "hardlink",
+      "sha256": "43bef32c0221d04f2296ff9123893a1d14e4a701984b7668a43d0688dd93fded",
+      "size_in_bytes": 251174
+    },
+    {
+      "_path": "lib/R/library/figpatch/help/figures/README-unnamed-chunk-7-1.png",
+      "path_type": "hardlink",
+      "sha256": "3329b739ecb4c4bd4a8e0a6160c26cdfea988cb6ff4f862dc7612e128fd1f567",
+      "size_in_bytes": 88546
+    },
+    {
+      "_path": "lib/R/library/figpatch/help/figures/README-unnamed-chunk-8-1.png",
+      "path_type": "hardlink",
+      "sha256": "3b87dfc09bc38ab8debf72e8e6d866130eaca6a2e3785ea22f82d1f30df52bf0",
+      "size_in_bytes": 42223
+    },
+    {
+      "_path": "lib/R/library/figpatch/help/figures/README-unnamed-chunk-9-1.png",
+      "path_type": "hardlink",
+      "sha256": "8c464ee70bfba186643c1d3a0474823ef74b6a3ff2cbaff87fb423f1ed08381d",
+      "size_in_bytes": 89080
+    },
+    {
+      "_path": "lib/R/library/figpatch/help/paths.rds",
+      "path_type": "hardlink",
+      "sha256": "91064a22315def4c5ce61bf2d0d7174526a4f8902082a2044e7906fa92e51007",
+      "size_in_bytes": 203
+    },
+    {
+      "_path": "lib/R/library/figpatch/html/00Index.html",
+      "path_type": "hardlink",
+      "sha256": "003b753994a5235a32f6b2b9055238a1bf5ce6c0cd466729c444742aeed3c20b",
+      "size_in_bytes": 1626
+    },
+    {
+      "_path": "lib/R/library/figpatch/html/R.css",
+      "path_type": "hardlink",
+      "sha256": "7378544281fb630e3e62a6b7855b428c008332a0249156e72aac5343078654df",
+      "size_in_bytes": 1735
+    }
+  ],
+  "paths_version": 1
+}

@@ -1,0 +1,31 @@
+package:
+  name: estimate
+  version: "1.0.13"
+
+source:
+  url:
+    - http://download.r-forge.r-project.org/src/contrib/estimate_1.0.13.tar.gz
+
+build:
+  number: 6
+  rpaths:
+    - lib/R/lib/
+    - lib/
+
+requirements:
+  host:
+    - r-base
+  run:
+    - r-base
+test:
+  commands:
+    - $R -e "library('estimate')" # [not win]
+    - "\"%R%\" -e \"library('estimate')\"" # [win]
+
+about:
+  home: https://r-forge.r-project.org
+  license: BSD
+  summary: Estimate of Stromal and Immune Cells in Malignant Tumor Tissues from Expression Data
+extra:
+  recipe-maintainers:
+    - Carlos

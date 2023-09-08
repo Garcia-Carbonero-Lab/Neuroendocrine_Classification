@@ -1,0 +1,32 @@
+package:
+  name: r-nlcor
+  version: "2.03"
+
+source:
+  git_url: https://github.com/ProcessMiner/nlcor.git
+
+build:
+  number: 6
+  rpaths:
+    - lib/R/lib/
+    - lib/
+
+requirements:
+  host:
+    - r-base=4.0.0
+    - r-ggplot2
+  run:
+    - r-base
+    - r-ggplot2
+test:
+  commands:
+    - $R -e "library('nlcor')" # [not win]
+    - "\"%R%\" -e \"library('nlcor')\"" # [win]
+
+about:
+  home: https://github.com/ProcessMiner/nlcor.git
+  license: BSD
+  summary: Non linear correlation
+extra:
+  recipe-maintainers:
+    - Carlos

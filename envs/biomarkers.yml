@@ -1,0 +1,11 @@
+name: biomarkers
+channels:
+  - bioconda
+  - defaults
+  - r
+  - conda-forge
+dependencies:
+  - r-base=4.2.0
+  - r-tidyverse=1.3.2
+  - r-caret=6.0_93
+  - r-glmnet=4.1_4

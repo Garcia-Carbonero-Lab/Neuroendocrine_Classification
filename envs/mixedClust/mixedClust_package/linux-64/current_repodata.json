@@ -1,0 +1,29 @@
+{
+  "info": {
+    "subdir": "linux-64"
+  },
+  "packages": {
+    "mixedclust-1.0.2-r42_6.tar.bz2": {
+      "build": "r42_6",
+      "build_number": 6,
+      "depends": [
+        "r-base >=4.2,<4.3.0a0",
+        "r-fda 6.0.5.*",
+        "r-rcpp 1.0.9.*",
+        "r-rcpparmadillo 0.11.4.0.1.*",
+        "r-rcppprogress 0.4.2.*"
+      ],
+      "license": "BSD",
+      "md5": "e2e7505a4d8c52c74192817af9c340a1",
+      "name": "mixedclust",
+      "sha256": "0a57cdfc6aff7813036fdcb2a75b1a15c2e2b88bace97672d17de1a2d6597e12",
+      "size": 344399,
+      "subdir": "linux-64",
+      "timestamp": 1671111735446,
+      "version": "1.0.2"
+    }
+  },
+  "packages.conda": {},
+  "removed": [],
+  "repodata_version": 1
+}

@@ -1,0 +1,12 @@
+name: classifier
+channels:
+  - bioconda
+  - defaults
+  - r
+  - conda-forge
+dependencies:
+  - r-ranger=0.14.1
+  - r-h2o=3.38.0.1
+  - r-base=4.2.0
+  - r-rsample=1.1.1
+  - r-ggplot2=3.4.1

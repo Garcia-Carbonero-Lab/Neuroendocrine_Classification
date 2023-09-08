@@ -1,0 +1,9 @@
+name: estimate
+channels:
+  - bioconda
+  - defaults
+  - r
+  - conda-forge
+dependencies:
+- r-base=4.0.0
+- mamba

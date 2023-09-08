@@ -1,0 +1,9 @@
+name: build
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - conda-build
+  - boa
+  - conda-verify
+  - mamba

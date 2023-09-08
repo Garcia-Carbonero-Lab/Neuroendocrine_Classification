@@ -1,0 +1,12 @@
+name: MOFA.nlcor
+channels:
+  - bioconda
+  - defaults
+  - r
+  - conda-forge
+dependencies:
+  - bioconductor-mofa2=1.8.0
+  - r-reticulate=1.26
+  - mamba
+  - libarchive==3.5.2
+  - r-base=4.2.0

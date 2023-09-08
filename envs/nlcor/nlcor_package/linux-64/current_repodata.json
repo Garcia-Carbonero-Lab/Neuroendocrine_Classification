@@ -1,0 +1,26 @@
+{
+  "info": {
+    "subdir": "linux-64"
+  },
+  "packages": {
+    "r-nlcor-2.03-r40_6.tar.bz2": {
+      "build": "r40_6",
+      "build_number": 6,
+      "depends": [
+        "r-base >=4.0,<4.1.0a0",
+        "r-ggplot2"
+      ],
+      "license": "BSD",
+      "md5": "4779ec880798d39cbeef0fb1710ebae3",
+      "name": "r-nlcor",
+      "sha256": "24e0b3e02ff31715fa7c14413917c189a9d204bc03926f7d6cc88341961c96b1",
+      "size": 114393,
+      "subdir": "linux-64",
+      "timestamp": 1670948355055,
+      "version": "2.03"
+    }
+  },
+  "packages.conda": {},
+  "removed": [],
+  "repodata_version": 1
+}

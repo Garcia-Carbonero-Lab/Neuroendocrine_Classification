@@ -1,0 +1,16 @@
+name: cnv.plot
+channels:
+  - conda-forge
+  - bioconda
+  - r
+  - defaults
+dependencies:
+  - r-base=4.2.0
+  - r-ggplot2=3.4.0
+  - r-tidyverse=1.3.2
+  - bioconductor-complexheatmap=2.14.0
+  - r-circlize=0.4.15
+  - r-reshape2=1.4.4
+  - bioconductor-maftools=2.14.0
+  - bioconductor-iranges=2.32.0
+  - bioconductor-genvisr=1.29.3

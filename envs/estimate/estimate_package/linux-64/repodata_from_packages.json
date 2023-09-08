@@ -1,0 +1,25 @@
+{
+  "info": {
+    "subdir": "linux-64"
+  },
+  "packages": {
+    "estimate-1.0.13-r35_6.tar.bz2": {
+      "build": "r35_6",
+      "build_number": 6,
+      "depends": [
+        "r-base >=3.5,<3.6.0a0"
+      ],
+      "license": "BSD",
+      "md5": "a25c9fd762d8b14ce7778059be098d8a",
+      "name": "estimate",
+      "sha256": "7b66e5e1ef40b40d300644e4c4c07c00186217b57dcbcf15919472fca396930f",
+      "size": 3483087,
+      "subdir": "linux-64",
+      "timestamp": 1670945795226,
+      "version": "1.0.13"
+    }
+  },
+  "packages.conda": {},
+  "removed": [],
+  "repodata_version": 1
+}

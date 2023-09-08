@@ -1,0 +1,29 @@
+{
+  "info": {
+    "subdir": "linux-64"
+  },
+  "packages": {
+    "r-figpatch-0.2-r42_6.tar.bz2": {
+      "build": "r42_6",
+      "build_number": 6,
+      "depends": [
+        "r-base >=4.0.0",
+        "r-ggplot2",
+        "r-magick",
+        "r-magrittr",
+        "r-patchwork"
+      ],
+      "license": "BSD",
+      "md5": "a94606907cd8d45228cb5afdb873efdf",
+      "name": "r-figpatch",
+      "sha256": "e9d88172dbda2c9d8358138c6ce89a6bc9c96a77876c6c26ba7ddee4f57561a0",
+      "size": 4703992,
+      "subdir": "linux-64",
+      "timestamp": 1686753947568,
+      "version": "0.2"
+    }
+  },
+  "packages.conda": {},
+  "removed": [],
+  "repodata_version": 1
+}

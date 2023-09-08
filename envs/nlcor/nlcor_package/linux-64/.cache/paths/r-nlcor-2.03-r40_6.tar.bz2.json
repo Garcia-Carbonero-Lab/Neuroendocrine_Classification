@@ -1,0 +1,149 @@
+{
+  "paths": [
+    {
+      "_path": "lib/R/library/nlcor/DESCRIPTION",
+      "path_type": "hardlink",
+      "sha256": "138321ba1dbae3969c8c220cacefe329d6d0434c14171f8f0e99eb16a09c8164",
+      "size_in_bytes": 789
+    },
+    {
+      "_path": "lib/R/library/nlcor/INDEX",
+      "path_type": "hardlink",
+      "sha256": "53332409ea57815f371c3eaaf11f4385760927d802006e4cd5c92318256e2e23",
+      "size_in_bytes": 268
+    },
+    {
+      "_path": "lib/R/library/nlcor/LICENSE",
+      "path_type": "hardlink",
+      "sha256": "4e4dacbfa1fd5d73232afcba99098c20d57c2a3ad7ca1fab9d4f9c4d123395ce",
+      "size_in_bytes": 18012
+    },
+    {
+      "_path": "lib/R/library/nlcor/Meta/Rd.rds",
+      "path_type": "hardlink",
+      "sha256": "314e44a8480247ba20c596cc5dbc98511f44e54dfb473f9a1209bd682806ab88",
+      "size_in_bytes": 338
+    },
+    {
+      "_path": "lib/R/library/nlcor/Meta/data.rds",
+      "path_type": "hardlink",
+      "sha256": "450d941c1b65418d080eb2cff3fa220a18a881fa5d61005eb6b3ffbeaaa1f01d",
+      "size_in_bytes": 99
+    },
+    {
+      "_path": "lib/R/library/nlcor/Meta/features.rds",
+      "path_type": "hardlink",
+      "sha256": "feae2f33b6c045fd83e96c8bbbc3bd215d25110ea742ef32b740e305c8d0c227",
+      "size_in_bytes": 121
+    },
+    {
+      "_path": "lib/R/library/nlcor/Meta/hsearch.rds",
+      "path_type": "hardlink",
+      "sha256": "f61af0ce778931708548f62c6b59aeafac1dad1302fc6dda15934c9b036e6ad3",
+      "size_in_bytes": 346
+    },
+    {
+      "_path": "lib/R/library/nlcor/Meta/links.rds",
+      "path_type": "hardlink",
+      "sha256": "7448731d5790cacf79c8a7749d4b9c73b4dd923b805497b89146e9b929ff8d1c",
+      "size_in_bytes": 155
+    },
+    {
+      "_path": "lib/R/library/nlcor/Meta/nsInfo.rds",
+      "path_type": "hardlink",
+      "sha256": "ba87e214791c43d7307b89bb023c5551a9933b7a6216acdeb1a6f883a5fcea4c",
+      "size_in_bytes": 197
+    },
+    {
+      "_path": "lib/R/library/nlcor/Meta/package.rds",
+      "path_type": "hardlink",
+      "sha256": "e2ef60d059d5a2a85b33c2d353b99245f16e67001e1ad19fd025816942fdb8b4",
+      "size_in_bytes": 907
+    },
+    {
+      "_path": "lib/R/library/nlcor/NAMESPACE",
+      "path_type": "hardlink",
+      "sha256": "9a911cf74a6902d46cb62dba2193a641bbe3965b8c0273e84c0e8b1344dd77ff",
+      "size_in_bytes": 60
+    },
+    {
+      "_path": "lib/R/library/nlcor/R/nlcor",
+      "path_type": "hardlink",
+      "sha256": "2fb8b16be23c820daf2e51b7ddfef61ca4978e561b1d228d546d1b356041f79e",
+      "size_in_bytes": 1056
+    },
+    {
+      "_path": "lib/R/library/nlcor/R/nlcor.rdb",
+      "path_type": "hardlink",
+      "sha256": "39490cf690dc04a0c10521d75b6066ae467ce8b631b047ec39a71871fed49ad8",
+      "size_in_bytes": 13548
+    },
+    {
+      "_path": "lib/R/library/nlcor/R/nlcor.rdx",
+      "path_type": "hardlink",
+      "sha256": "5d934ad566effc3afb6b2b6f6909bdb028c8ecfee5411fc0ebe0fa09398e3549",
+      "size_in_bytes": 416
+    },
+    {
+      "_path": "lib/R/library/nlcor/data/Rdata.rdb",
+      "path_type": "hardlink",
+      "sha256": "99f32ba698b4758fe3c06f4a8090764cb6fe209c7935bffc346615f17811b6bd",
+      "size_in_bytes": 68754
+    },
+    {
+      "_path": "lib/R/library/nlcor/data/Rdata.rds",
+      "path_type": "hardlink",
+      "sha256": "e279456c5f805516f99058c227ae4045016ef02d49bade879b6cc9e5a5f0190e",
+      "size_in_bytes": 115
+    },
+    {
+      "_path": "lib/R/library/nlcor/data/Rdata.rdx",
+      "path_type": "hardlink",
+      "sha256": "7807e71fabbe7c7062748e87acef1f7628329f55bb6ad5c02fce322d50d9d4bb",
+      "size_in_bytes": 212
+    },
+    {
+      "_path": "lib/R/library/nlcor/help/AnIndex",
+      "path_type": "hardlink",
+      "sha256": "e5a180e88e4616aa45b64a0b84665e5595983c15ce91ba7eaef98310fa6014e6",
+      "size_in_bytes": 56
+    },
+    {
+      "_path": "lib/R/library/nlcor/help/aliases.rds",
+      "path_type": "hardlink",
+      "sha256": "1dbf1adbc357f654aeae1645c73377027b73b1a40bb90e7bd3dc5bf90491e93c",
+      "size_in_bytes": 101
+    },
+    {
+      "_path": "lib/R/library/nlcor/help/nlcor.rdb",
+      "path_type": "hardlink",
+      "sha256": "fac7eb3d62296ab4e722bc8c056a28fafb478dae9f144f33735aa9289cfa7bec",
+      "size_in_bytes": 11587
+    },
+    {
+      "_path": "lib/R/library/nlcor/help/nlcor.rdx",
+      "path_type": "hardlink",
+      "sha256": "655983ac58b7933dd59ed2b93c1e49bb9338080dc3a47ddc362c0a9e1ab1d1b1",
+      "size_in_bytes": 295
+    },
+    {
+      "_path": "lib/R/library/nlcor/help/paths.rds",
+      "path_type": "hardlink",
+      "sha256": "c699d5c8dde295804d72ea59035f99110a8309de28d17bf096eb8bac8dcc7725",
+      "size_in_bytes": 194
+    },
+    {
+      "_path": "lib/R/library/nlcor/html/00Index.html",
+      "path_type": "hardlink",
+      "sha256": "9ea310805c3856f2f29416fc955274cd6df8af05fd6236fe500a926d9335f5a5",
+      "size_in_bytes": 1633
+    },
+    {
+      "_path": "lib/R/library/nlcor/html/R.css",
+      "path_type": "hardlink",
+      "sha256": "0f4849ab1757247808d54da2c371e992364371c942ad7d629dae8d62327ed068",
+      "size_in_bytes": 1335
+    }
+  ],
+  "paths_version": 1
+}

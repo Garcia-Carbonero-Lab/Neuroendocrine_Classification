@@ -1,0 +1,40 @@
+package:
+  name: r-figpatch
+  version: "0.2"
+
+source:
+  url:
+    - https://cran.r-project.org/src/contrib/figpatch_0.2.tar.gz
+
+build:
+  number: 6
+  rpaths:
+    - lib/R/lib/
+    - lib/
+
+requirements:
+  host:
+    - r-base>=4.0.0
+    - r-ggplot2
+    - r-magick
+    - r-magrittr
+    - r-patchwork
+    - jpeg=v9e
+  run:
+    - r-base>=4.0.0
+    - r-ggplot2
+    - r-magick
+    - r-magrittr
+    - r-patchwork
+    - jpeg=9e
+test:
+  commands:
+    - $R -e "library('figpatch')" # [not win]
+    - "\"%R%\" -e \"library('figpatch')\"" # [win]
+
+about:
+  home: https://r-forge.r-project.org
+  license: BSD
+  summary: Package to use external images in patchwork
+  recipe-maintainers:
+    - Carlos

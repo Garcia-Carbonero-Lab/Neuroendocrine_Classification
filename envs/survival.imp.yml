@@ -1,0 +1,12 @@
+name: survival.imp
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+  - r
+dependencies:
+  - r-mice=3.16.0
+  - r-hmisc=5.1_0
+  - r-rms=6.7_0
+  - r-base=4.2.0
+  - r-forestmodel=0.6.2

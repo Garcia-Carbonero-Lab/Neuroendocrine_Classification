@@ -1,0 +1,1 @@
+{"build": "r35_6", "build_number": 6, "depends": ["r-base >=3.5,<3.6.0a0"], "license": "BSD", "name": "estimate", "subdir": "linux-64", "timestamp": 1670945795226, "version": "1.0.13", "size": 3483087, "md5": "a25c9fd762d8b14ce7778059be098d8a", "sha256": "7b66e5e1ef40b40d300644e4c4c07c00186217b57dcbcf15919472fca396930f"}

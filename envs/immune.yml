@@ -1,0 +1,10 @@
+name: MOFA
+channels:
+  - bioconda
+  - defaults
+  - r
+  - conda-forge
+dependencies:
+  - r-mcpcounter=1.1.0
+  - r-xcell=1.3
+  - r-base=4.2.0

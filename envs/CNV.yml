@@ -1,0 +1,14 @@
+name: CNV
+channels:
+  - bioconda
+  - defaults
+  - r
+  - conda-forge
+  - HCC
+dependencies:
+- r-base=4.0
+- bioconductor-champ=2.20.1
+- libopenblas=0.3.10
+- gistic2 =2.0.23
+- bioconductor-illuminahumanmethylationepicanno.ilm10b4.hg19=0.6.0
+- bioconductor-champdata=2.22.0 
