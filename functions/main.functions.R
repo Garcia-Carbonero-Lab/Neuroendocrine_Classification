@@ -1,6 +1,29 @@
+#function:zscore.rows2
+#input:
+#      x: matrix with features as rows and samples as columns
+
+#output: scaled matrix
+
+#description: matrix scaled removing mean and dive by standard deviation
+
+
+
 zscore.rows2 <- function(x){
   return(t(apply(x, 1, function(x) (x - mean(na.omit(x)))/sd(na.omit(x)))))
 }
+
+
+
+#function:create.met.anot
+#input:
+#      epic:EPIC arrays anotation 
+
+#output: data.frame with probe names as row.names and columns with
+# information about chromosome, start and end position, Island,
+# fgroup, DMR genes and UCSC reference group
+#description: takes Epic anotation and transform it to easy anotation matrix for
+#epic probes
+
 
 create.met.anot <- function(epic) {
 
