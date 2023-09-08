@@ -2,7 +2,7 @@
 library(tidyverse)
 
 
-source("functions/Preprocess/aditional.functions.R")
+source("functions/preprocess/aditional.functions.R")
 
 config <- read.csv("config/config.tsv",
     sep = "\t",

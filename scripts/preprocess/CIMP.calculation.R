@@ -20,7 +20,7 @@ if (dir.exists(paste0(wkdir, "/MOFA")) == F) {
 
 
 # open functions from MOFA file
-source("functions/Preprocess/methylation.process.R")
+source("functions/preprocess/methylation.process.R")
 
 
 
