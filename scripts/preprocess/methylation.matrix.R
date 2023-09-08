@@ -4,7 +4,7 @@ library(ChAMP)
 library(tidyverse)
 # open functions
 
-source("functions/Preprocess/methylation.process.R")
+source("functions/preprocess/methylation.process.R")
 source("functions/main.functions.R")
 
 # Open config file
@@ -20,6 +20,8 @@ names(values) <- keys
 wkdir <- values["wkdir"]
 datadir <- values["datadir"]
 
+
+#open input data
 clinical.data <- read.table(paste0(datadir, "/clinical_data.txt"),
     sep = "\t",
     header = T
@@ -30,7 +32,7 @@ myImport <- champ.import(paste0(datadir, "/methylome/raw"),
 )
 
 
-# we calculate
+# we calculate quality of methylation data
 qual <- qual.met(myImport)
 
 clinical.data <- merge(clinical.data,
@@ -40,7 +42,7 @@ clinical.data <- merge(clinical.data,
 )
 
 
-
+#filtering data using default parameters
 myLoad <- champ.filter(
     beta = myImport$beta, M = myImport$M,
     SampleCutoff = 0.15, pd = myImport$pd,
@@ -68,7 +70,7 @@ setwd(paste0(wkdir, "/preprocess/methylome"))
 # Normalizaton don't support names with spaces
 
 
-
+#BMIQ normalization
 myNormB <- champ.norm(
     beta = myLoad$beta, arraytype = "EPIC",
     cores = 10,
@@ -79,7 +81,7 @@ myNormB <- myNormB[complete.cases(myNormB), ]
 myNormB <- apply(myNormB, c(1,2), as.numeric)
 
 
-
+#write beta values
 write.table(myNormB, "myNormB.txt", sep = "\t", row.names = T, col.names = NA)
 
 
@@ -88,13 +90,15 @@ write.table(clinical.data, paste0(datadir,"/clinical_data.txt"),
     sep = "\t", row.names = F, col.names = T
 )
 
-# TRansform beta values to m
+# Transform beta values to m
 
 myNormM <- myNormB
 myNormM[myNormM <= 0.001] <- 0.001
 myNormM[myNormM >= 0.999] <- 0.999
 myNormM <- log((myNormM / (1 - myNormM)), 2)
 
+
+#write M values
 write.table(myNormM,
     "myNormM.txt",
     sep = "\t",
