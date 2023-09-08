@@ -7,7 +7,7 @@ library(limma)
 library(RColorBrewer)
 # open functions
 
-source("functions/Preprocess/aditional.functions.R")
+source("functions/preprocess/aditional.functions.R")
 source("functions/main.functions.R")
 
 
@@ -53,6 +53,7 @@ row.names = 1
 
 ###########################################################################
 
+#Create paths
 if (dir.exists(paste0(wkdir, "/preprocess/discrete_features")) == F) {
 
     dir.create(paste0(wkdir, "/preprocess/discrete_features"))
@@ -74,6 +75,7 @@ if (dir.exists(paste0(wkdir,
 
 }
 
+#Select features to test
 columns <- c("BIOPSY_PRIMARY_LOCATION",
             "BIOPSY_PRIMARY_LOCATION",
             "BIOPSY_METASTASIS_LOCATION",

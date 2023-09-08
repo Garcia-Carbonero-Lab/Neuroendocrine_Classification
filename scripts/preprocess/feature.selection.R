@@ -2,7 +2,7 @@
 library(tidyverse)
 
 
-source("functions/Preprocess/aditional.functions.R")
+source("functions/preprocess/aditional.functions.R")
 
 config <- read.csv("config/config.tsv",
     sep = "\t",
@@ -16,7 +16,7 @@ names(values) <- keys
 wkdir <- values["wkdir"]
 datadir <- values["datadir"]
 
-# Open data
+# Open expression data with quality adjusted
 
 expression <- read.table(paste0(wkdir,
 "/preprocess/transcriptome/expression.qual.txt"),
@@ -26,6 +26,7 @@ row.names = 1,
 check.names = F
 )
 
+# Open methylation data with quality adjusted
 
 methylation <- read.table(paste0(wkdir,
 "/preprocess/methylome/methylation.qual.txt"),

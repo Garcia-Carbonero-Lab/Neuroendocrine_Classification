@@ -21,7 +21,7 @@ datadir <- values["datadir"]
 
 
 #load functions
-source("functions/Preprocess/expression.process.R")
+source("functions/preprocess/expression.process.R")
 
 
 targetfile <- paste0(datadir, "/transcriptome/raw/targets.txt")
@@ -43,9 +43,10 @@ if (dir.exists(paste0(wkdir, "/preprocess/transcriptome")) == F) {
 
 outputpath <- paste0(wkdir, "/preprocess/transcriptome")
 
+# Open .CDF with information of clariom S Human probes
 clariomshumancdf <- make.cdf.env("Clariom_S_Human.r1.Gene.CDF", inputpath)
 
-Norm_exp(targetfile = targetfile
+norm_exp(targetfile = targetfile
          , outputpath = outputpath
          , flag = "RMA"
          , inpath = inputpath)

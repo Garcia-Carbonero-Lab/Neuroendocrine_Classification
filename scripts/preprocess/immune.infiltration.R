@@ -1,4 +1,4 @@
-#This script need environment immunes
+#This script need environment immune
 
 library(MCPcounter)
 library(xCell)
@@ -21,7 +21,7 @@ clinical.data <- read.table(paste0(datadir, "/clinical_data.txt"),
     header = T
 )
 
-
+#open expression quality adjusted matrix
 expression <- read.table(paste0(wkdir,
 "/preprocess/transcriptome/expression.qual.txt"),
 sep = '\t',
@@ -36,9 +36,9 @@ if (dir.exists(paste0(wkdir, "/immune")) == F) {
 
 }
 
-#MCPcounter
+#Caclutate MCPcounter scores
 mcp <- MCPcounter.estimate(expression, featuresType = "HUGO_symbols")
-rownames(mcp) <- paste0(rownames(mcp), ".mcp")
+
 rownames(mcp) <- gsub(" ",".",rownames(mcp))
 
 write.table(mcp,
@@ -47,16 +47,3 @@ sep = "\t",
 row.names = T,
 col.names = NA)
 
-#xCell
-
-xcell <- xCellAnalysis(expression)
-rownames(xcell) <- paste0(rownames(xcell), ".xcell")
-rownames(xcell) <- gsub(" ",".",rownames(xcell))
-rownames(xcell) <- gsub("-",".",rownames(xcell))
-rownames(xcell) <- gsub("\\+","",rownames(xcell))
-
-write.table(xcell,
-paste0(wkdir, "/immune/xCell.tsv"),
-sep = "\t",
-row.names = T,
-col.names = NA)

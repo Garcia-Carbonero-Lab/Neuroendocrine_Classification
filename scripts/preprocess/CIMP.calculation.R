@@ -20,7 +20,7 @@ if (dir.exists(paste0(wkdir, "/MOFA")) == F) {
 
 
 # open functions from MOFA file
-source("functions/Preprocess/methylation.process.R")
+source("functions/preprocess/methylation.process.R")
 
 
 
@@ -38,15 +38,15 @@ check.names = F
 
 )
 
-methylation_scaled <- scale.beta(methylation)
 
 methylation <- apply(methylation, c(1,2), as.numeric)
 
-#We calculate CIMP 
+#Calculation of CIMP
 
 CIMP <- addCIMPstatus(methylation)
 
 
+#Add CIMP to clinical data
 clinical.data <- merge(clinical.data, CIMP,
     by.x = "CLINICAL_TRIAL_CODE",
     by.y = "row.names"
