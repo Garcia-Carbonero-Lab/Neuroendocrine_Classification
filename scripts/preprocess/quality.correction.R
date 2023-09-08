@@ -7,7 +7,7 @@ library(limma)
 
 # open functions
 
-source("functions/Preprocess/aditional.functions.R")
+source("functions/preprocess/aditional.functions.R")
 source("functions/main.functions.R")
 
 
@@ -24,7 +24,7 @@ names(values) <- keys
 wkdir <- values["wkdir"]
 datadir <- values["datadir"]
 
-# Open data
+# Open expresion normalized matrix
 
 expression <- read.table(paste0(wkdir,
 "/preprocess/transcriptome/RMA_Expression_data_genes.tsv"),
@@ -34,6 +34,7 @@ row.names = 1,
 check.names = F
 )
 
+# Open methylation normalized M matrix
 
 methylation <- read.table(paste0(wkdir,
 "/preprocess/methylome/myNormM.txt"),
@@ -53,7 +54,7 @@ row.names = 1
 )
 
 #######################################################
-# Check correlation between quality and data
+# Create folders
 
 
 if (dir.exists(paste0(wkdir, "/preprocess")) == F) {
@@ -71,14 +72,13 @@ if (dir.exists(paste0(wkdir, "/preprocess/quality.plots")) == F) {
 }
 
 
-
+#Calculate PCA and UMAp correlations before quality correction
 pca_exp <- pca_corr(data = expression,
 base = clinical.data,
 columns = c("TRANSCRIPTOME_DAYS", "pos.vs.neg.auc"),
 outpath = paste0(wkdir, "/preprocess/quality.plots/transcriptome"),
 flag = "before.expression"
 )
-
 
 umap_exp <- umap_corr(data = expression,
 base = clinical.data,
@@ -140,7 +140,7 @@ row.names = T
 )
 
 #########################################################
-# eliminate PCA1 associated to quality
+# eliminate PCA1 that is associated to quality
 
 pcaexp <- generate_pca(expression)
 
@@ -175,7 +175,8 @@ row.names = T,
 col.names = NA
 )
 #########################################################
-#
+##Calculate PCA and UMAp correlations after quality correction
+
 
 pca_exp_qual <- pca_corr(data = expression_qual,
 base = clinical.data,

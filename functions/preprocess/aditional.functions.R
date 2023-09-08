@@ -1,4 +1,12 @@
 
+#function:theme_general
+#input:
+#      plot: ggplot object
+
+#output: ggplot object
+
+#description: function to change text size and legend size in ggplot object
+
 
 theme_general <- function(plot) {
     themed <- plot +
@@ -7,6 +15,29 @@ theme_general <- function(plot) {
             legend.key.height = unit(10, "mm")
         )
 }
+
+
+
+#function:pca_corr
+#input:
+#      data: data matrix with features as rows and samples as columns
+#      base: data.frame with clinical information with samples as
+#            rows and features as columns
+#      columns: name of continous columns in clinical data to correlate
+#      outpath: output path to write results
+#      scale: True or False. True if data should be scaled 
+#             removing median and divide by standar deviation.
+#      flag:  Name to add in the name of reults files.
+#      anotate1: coordinates where put the text with correlation of PCA1
+#      anotate2: coordinates where put the text with correlation of PCA2
+
+#output: matrix with features in rows and 10 principal components in columns
+#   showing correlation coeficient and p value calculated by pearson correlation
+
+#description: function to make an scatterplot showing PC1 vs PC2 and indicating
+#the value of continous variables in color and the pearson correlation coeficent
+# and p-avalue in text
+
 
 
 
@@ -42,7 +73,7 @@ pca_corr <- function(data, base, columns, outpath, scale = T, flag,
             )
             est[[c]][[p]] <- round(corr$estimate, 2)
         }
-        # We plot the PCA1 and PCA2 indicating as color the variables
+        # We plot the PCA1 and PCA2 indicating  the value of variables in color
         plt <- ggplot(aes_string("PC1", "PC2", color = c), data = bs) +
             geom_point() +
             theme_classic() +
@@ -81,8 +112,28 @@ pca_corr <- function(data, base, columns, outpath, scale = T, flag,
            ,dpi =  300)
     }
     df_corr <- do.call(rbind, corrl)
-    return(plt)
+    return(df_corr)
 }
+
+#function:umap_corr
+#input:
+#      data: data matrix with features as rows and samples as columns
+#      base: data.frame with clinical information with samples as
+#            rows and features as columns
+#      columns: name of continous columns in clinical data to correlate
+#      outpath: output path to write results
+#      scale: True or False. True if data should be scaled 
+#             removing median and divide by standar deviation.
+#      flag:  Name to add in the name of reults files.
+#      anotate1: coordinates where put the text with correlation of UMAP1
+#      anotate2: coordinates where put the text with correlation of UMAP2
+
+#output: matrix with features in rows and 2 UMAP in columns
+#   showing correlation coeficient and p value calculated by pearson correlation
+
+#description: function to make an scatterplot showing UMAP1 vs UMAP2 and indicating
+#the value of continous variables in color and the pearson correlation coeficent
+# and p-avalue in text
 
 umap_corr <- function(data, base, columns, outpath, scale = T, flag,
                       anotate1 = c(2, 4),
@@ -139,7 +190,7 @@ umap_corr <- function(data, base, columns, outpath, scale = T, flag,
         ), height = 8, width = 8)
     }
     df_corr <- do.call(rbind, corrl)
-    return(plt)
+    return(df_corr)
 }
 
 
@@ -151,6 +202,25 @@ generate_pca <- function(data) {
     return(pca_data)
 }
 
+#function:pca_corr_discrete
+#input:
+#      data: data matrix with features as rows and samples as columns
+#      base: data.frame with clinical information with samples as
+#            rows and features as columns
+#      columns: name of discrete columns in clinical data to correlate
+#      outpath: output path to write results
+#      scale: True or False. True if data should be scaled 
+#             removing median and divide by standar deviation.
+#      flag:  Name to add in the name of reults files.
+#      anotate1: coordinates where put the text with correlation of PCA1
+#      anotate2: coordinates where put the text with correlation of PCA2
+
+#output: matrix with features in rows and 10 principal components in columns
+#   showing correlation coeficient and p value calculated by pearson correlation
+
+#description: function to make an scatterplot showing PC1 vs PC2 and indicating
+#the label of discrete variables in color and the pearson correlation coeficent
+# and p-avalue in text resulting between fitted values in linear model and PCAs
 
 pca_corr_discrete <- function(data, base, columns, outpath, scale = T, flag,
                               anotate1 = c(100, 150),
@@ -222,6 +292,8 @@ pca_corr_discrete <- function(data, base, columns, outpath, scale = T, flag,
                 rownames(qual_col_pals)
             ))
 
+
+            #scatterplot
             plt <- ggplot(aes_string("PC1", "PC2", color = c), data = df) +
                 geom_point() +
                 scale_color_manual(values = sample(
@@ -229,7 +301,7 @@ pca_corr_discrete <- function(data, base, columns, outpath, scale = T, flag,
                     length(unique(df[, c]))
                 ), name = "label") +
                 theme_classic() +
-                xlab(paste("PCA1", round(prop_varianza[[1]], 2))) +
+                xlab(paste("PCA1", round(prop_varianza[[1]], 2))) + #add variance
                 ylab(paste("PCA2", round(prop_varianza[[2]], 2))) +
                 annotate("text",
                     x = anotate1[1], y = anotate1[2], size = 4,
@@ -264,7 +336,25 @@ pca_corr_discrete <- function(data, base, columns, outpath, scale = T, flag,
     return(df)
 }
 
+#function:umap_corr_discrete
+#input:
+#      data: data matrix with features as rows and samples as columns
+#      base: data.frame with clinical information with samples as
+#            rows and features as columns
+#      columns: name of discrete columns in clinical data to correlate
+#      outpath: output path to write results
+#      scale: True or False. True if data should be scaled 
+#             removing median and divide by standar deviation.
+#      flag:  Name to add in the name of reults files.
+#      anotate1: coordinates where put the text with correlation of UMAPA1
+#      anotate2: coordinates where put the text with correlation of UMAP2
 
+#output: matrix with features in rows and 10 principal components in columns
+#   showing correlation coeficient and p value calculated by pearson correlation
+
+#description: function to make an scatterplot showing UMAP1 vs UMAP2 and indicating
+#the label of discrete variables in color and the pearson correlation coeficent
+# and p-avalue in text resulting between fitted values in linear model and UMAPs
 umap_corr_discrete <- function(data, base, columns, outpath, scale = T, flag,
                                anotate1 = c(2, 4),
                                anotate2 = c(2, 3)) {
@@ -376,6 +466,23 @@ umap_corr_discrete <- function(data, base, columns, outpath, scale = T, flag,
     return(df)
 }
 
+
+#function:filter_tissue
+#input:
+#      data: data matrix with features as rows and samples as columns
+#      base: data.frame with clinical information with samples as
+#            rows and features as columns
+#      tissues: tissues in which select features
+#      n: number of features to select
+#      flag:  Name to add in the name of reults files.
+#      
+
+#output: matrix with features in rows and 10 principal components in columns
+#   showing correlation coeficient and p value calculated by pearson correlation
+
+#description: function to make an scatterplot showing UMAP1 vs UMAP2 and indicating
+#the label of discrete variables in color and the pearson correlation coeficent
+# and p-avalue in text resulting between fitted values in linear model and UMAPs
 filter_tissue <- function(data, base, tissues, n = 5000, flag) {
     
     #we applied the selection in each primary tumor separately

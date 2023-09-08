@@ -19,7 +19,7 @@ clinical.data <- read.table(paste0(datadir, "/clinical_data.txt"),
     header = T
 )
 
-
+#open expression quality adjusted matrix
 expression <- read.table(paste0(wkdir,
 "/preprocess/transcriptome/expression.qual.txt"),
 sep = '\t',
@@ -28,6 +28,7 @@ row.names = 1,
 check.names = F
 )
 
+#write expression quality adjusted matrix for estimate compunting
 
 write.table(expression,
 paste0(wkdir,
