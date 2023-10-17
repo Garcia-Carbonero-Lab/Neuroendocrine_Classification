@@ -1,4 +1,4 @@
-#function:Mofa.model
+#function:Hazard_Cox
 #input:
 #      base: data.frame with samples as rows and clinical information in columns
 #       class: column name of feature of interest

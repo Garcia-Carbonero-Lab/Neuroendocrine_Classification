@@ -7,7 +7,7 @@
 #output: matrix with samples in rows and factors in columns
 
 #description: Function to obtain the value of Factors in each sample
-# 
+
 
 
 obtain_Z <- function(mod){

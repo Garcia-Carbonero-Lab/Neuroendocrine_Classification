@@ -221,7 +221,7 @@ row.names = F,
 col.names = T)
 }
 
-#function:heatmap
+#function:heatmap.molecular
 #input:
 #      exp: matrix with genes as rows and samples as columns
 #      met: matrix with methylation probes as rows and samples as columns
@@ -250,7 +250,7 @@ col.names = T)
 
 #output: heatmap
 
-#description: function to create a heatmap
+#description: function to create a heatmap with expression and methylation data
 heatmap.molecular <- function(exp,
 met,
 base,
