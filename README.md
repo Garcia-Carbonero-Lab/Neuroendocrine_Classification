@@ -34,8 +34,8 @@ The first step is to preprocess all data used in this project. The order in whic
 
 ## MOFA analysis
 
-### MOFA folder
 Once all data is ready to be analyzed, the second step is to build the MOFA model and interrogate each factor to see which clinical and biological features are associated to each factor.
+### MOFA folder
 
 **MOFA.creation.R**:script to create the MOFA model 
 **MOFA.analysis.R**: script to associate MOFA factors with clinical and biological variables
