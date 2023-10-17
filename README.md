@@ -24,7 +24,7 @@ The first step is to preprocess all data used in this project.
 
 ### genesets folder
 
-**filter.genesets**: script to select genesets to evaluate in by gsea. \ 
+**filter.genesets**: script to select genesets to evaluate in by gsea. \
 **anotate.genesets**: script to change gene names in genesets by the aliases annotated in expression data.
 
 ### master_regulators folder:
@@ -37,7 +37,7 @@ The first step is to preprocess all data used in this project.
 Once all data is ready to be analyzed, the second step is to build the MOFA model and interrogate each factor to see which clinical and biological features are associated to each factor.
 ### MOFA folder
 
-**MOFA.creation.R**:script to create the MOFA model. \ 
+**MOFA.creation.R**:script to create the MOFA model. \
 **MOFA.analysis.R**: script to associate MOFA factors with clinical and biological variables. \
 **MOFA.non.linear.analysis.R**: script to calculate the no linear association between factors and continuous features.
 
@@ -63,7 +63,7 @@ Finally, we have characterized each of the molecular subtypes from a clinical an
 **deg**: script to apply differential expression analysis. \
 **deg**: script to apply differential methylation analysis. \
 **corr_met_exp**: script to calculate the correlation between methylation probes and genes annotated in the same DNA region. \
-**prognostic.expression**: script to select gene whose expression has a prognostic value using Lasso Cox models. \
+**prognostic.expression**: script to select gene whose expression has a prognostic value using Lasso Cox models.
 
 
 ## Figuras
