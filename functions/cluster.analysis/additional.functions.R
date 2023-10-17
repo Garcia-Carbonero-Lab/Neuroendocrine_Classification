@@ -136,7 +136,7 @@ pdf(paste0(
 #output: boxplots with wilcoxon p value and a table with ther esults of wilcoxon 
 # test
 
-#description: function to compare discrete variables using wilcoxon rank test
+#description: function to compare continous variables using wilcoxon rank test
 
 
 wilcox_plots <- function(data,
