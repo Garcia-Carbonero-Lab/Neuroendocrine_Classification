@@ -8,7 +8,7 @@ library(ggplot2)
 source("functions/MOFA/MOFA.nonlinear.R")
 source("functions/MOFA/adictional.functions.R")
 
-config <- read.csv("config/config.template.tsv",
+config <- read.csv("config/config.tsv",
 sep = "\t",
 header = T)
 

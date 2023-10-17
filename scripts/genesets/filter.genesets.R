@@ -1,6 +1,6 @@
 #For this script we need  geneset.yml
 library(GSEABase)
-config <- read.csv("config/config.template.tsv",
+config <- read.csv("config/config.tsv",
 sep = "\t",
 header = T)
 
