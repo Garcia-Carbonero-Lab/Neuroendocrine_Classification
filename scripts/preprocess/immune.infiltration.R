@@ -1,7 +1,6 @@
 #This script need environment immune
 
 library(MCPcounter)
-library(xCell)
 
 config <- read.csv("config/config.tsv",
     sep = "\t",
