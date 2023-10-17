@@ -1,9 +1,9 @@
 # Neuroendocrine_Classification
-This repository has all the code used to develop our lab's cross-site classification in well-differentiated neuroendocrine tumors. Unfortunately, the data is not public as these results have not yet been published.
+This repository has all the code used to develop our lab's cross-site classification in well-differentiated neuroendocrine tumors. Unfortunately, the data is not public as these results have not yet been published. The order in which scripts are described is the order in which they have been run.
 
 ## Preprocess
 
-The first step is to preprocess all data used in this project. The order in which scripts are described is the order to run them
+The first step is to preprocess all data used in this project.
 
 ### preprocess folder
 
