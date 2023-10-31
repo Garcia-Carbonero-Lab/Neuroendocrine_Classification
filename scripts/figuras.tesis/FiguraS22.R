@@ -27,14 +27,14 @@ names(values) <- keys
 wkdir <- values["wkdir"]
 datadir <- values["datadir"]
 
-if (dir.exists(paste0(wkdir, "/Figuras_tesis/FiguraS22")) == F) {
+if (dir.exists(paste0(wkdir, "/Figuras_tesis/FiguraS23")) == F) {
 
-    dir.create(paste0(wkdir, "/Figuras_tesis/FiguraS22"))
+    dir.create(paste0(wkdir, "/Figuras_tesis/FiguraS23"))
 
 }
 
 
-outdir <- paste0(wkdir, "/Figuras_tesis/FiguraS22")
+outdir <- paste0(wkdir, "/Figuras_tesis/FiguraS23")
 
 expression <- read.table(paste0(wkdir,
 "/preprocess/transcriptome/expression.qual.txt"),
@@ -84,15 +84,15 @@ base <- merge(base,medians, by = "row.names")
 
 
 
-FiguraS22BA <- Kapplan_Meyer(cut_survival(base, 150,
+FiguraS23A <- Kapplan_Meyer(cut_survival(base, 150,
 time = "time",
 event = "status"),
-"GIPC2",
+"PAK3",
 "time",
 "status",
 NULL,
 outdir,
-"FiguraS22BA",
+"FiguraS23A",
 c("red",
 "blue"),
 width= 8,
@@ -101,7 +101,7 @@ risk.table = T,
 font = 20,
 fontsize = 7) 
 
-FiguraS22BA$table <- FiguraS22BA$table  +
+FiguraS23A$table <- FiguraS23A$table  +
 scale_y_discrete(labels = c("Bajo", "Alto")) +
 theme(axis.title.y = element_blank(),
     axis.text.x = element_text(size = 20),
@@ -109,16 +109,16 @@ theme(axis.title.y = element_blank(),
     axis.text.y = ggtext::element_markdown(size = 20),
     plot.margin = unit(c(1,1,1,1), "cm")
         ) 
-FiguraS22BA$plot <- FiguraS22BA$plot + ggtitle("Mediana GIPC2") + theme(
+FiguraS23A$plot <- FiguraS23A$plot + ggtitle("Mediana PAK3") + theme(
     plot.title = element_text(hjust = 0.5,
     vjust= 1, size = 30),
     axis.title.y = element_text(size= 20),
     axis.text.y = element_text(margin = margin(20, 10, 20, 20)),
     plot.margin = unit(c(1,1,1,1), "cm"))
 
-pdf(paste0(outdir, "/GIPC2",
+pdf(paste0(outdir, "/PAK3",
 "_Kapplan_Meyer.pdf"), width = 12, height = 12)
-print(FiguraS22BA)
+print(FiguraS23A)
 dev.off()
 
 
@@ -127,15 +127,15 @@ df <- base[base$Subtipo == "SN1",]
 
 
 
-FiguraS22BB <- Kapplan_Meyer(cut_survival(df, 150,
+FiguraS23B <- Kapplan_Meyer(cut_survival(df, 150,
 time = "time",
 event = "status"),
-"GIPC2",
+"PAK3",
 "time",
 "status",
 NULL,
 outdir,
-"FiguraS22BB",
+"FiguraS23B",
 c("gold4", "gold"),
 width= 8,
 height=8,
@@ -143,7 +143,7 @@ risk.table = T,
 font = 20,
 fontsize = 7) 
 
-FiguraS22BB$table <- FiguraS22BB$table  +
+FiguraS23B$table <- FiguraS23B$table  +
 scale_y_discrete(labels = c("Bajo", "Alto")) +
 theme(axis.title.y = element_blank(),
     axis.text.x = element_text(size = 20),
@@ -151,31 +151,31 @@ theme(axis.title.y = element_blank(),
     axis.text.y = ggtext::element_markdown(size = 20),
     plot.margin = unit(c(1,1,1,1), "cm")
         ) 
-FiguraS22BB$plot <- FiguraS22BB$plot + ggtitle("Mediana GIPC2 SN1") + theme(
+FiguraS23B$plot <- FiguraS23B$plot + ggtitle("Mediana PAK3 SN1") + theme(
     plot.title = element_text(hjust = 0.5,
     vjust= 1, size = 30),
     axis.title.y = element_text(size= 20),
     axis.text.y = element_text(margin = margin(20, 10, 20, 20)),
     plot.margin = unit(c(1,1,1,1), "cm"))
 
-pdf(paste0(outdir, "/GIPC2_SN1",
+pdf(paste0(outdir, "/PAK3_SN1",
 "_Kapplan_Meyer.pdf"), width = 12, height = 12)
-print(FiguraS22BB)
+print(FiguraS23B)
 dev.off()
 
 
 df <- base[base$Subtipo == "SN2",]
 
 
-FiguraS22BC <- Kapplan_Meyer(cut_survival(df, 150,
+FiguraS23C <- Kapplan_Meyer(cut_survival(df, 150,
 time = "time",
 event = "status"),
-"GIPC2",
+"PAK3",
 "time",
 "status",
 NULL,
 outdir,
-"FiguraS22BC",
+"FiguraS23C",
 c("skyblue4", "skyblue"),
 width= 8,
 height=8,
@@ -183,7 +183,7 @@ risk.table = T,
 font = 20,
 fontsize = 7) 
 
-FiguraS22BC$table <- FiguraS22BC$table  +
+FiguraS23C$table <- FiguraS23C$table  +
 scale_y_discrete(labels = c("Bajo", "Alto")) +
 theme(axis.title.y = element_blank(),
     axis.text.x = element_text(size = 20),
@@ -191,31 +191,31 @@ theme(axis.title.y = element_blank(),
     axis.text.y = ggtext::element_markdown(size = 20),
     plot.margin = unit(c(1,1,1,1), "cm")
         ) 
-FiguraS22BC$plot <- FiguraS22BC$plot + ggtitle("Mediana GIPC2 SN2") + theme(
+FiguraS23C$plot <- FiguraS23C$plot + ggtitle("Mediana PAK3 SN2") + theme(
     plot.title = element_text(hjust = 0.5,
     vjust= 1, size = 30),
     axis.title.y = element_text(size= 20),
     axis.text.y = element_text(margin = margin(20, 10, 20, 20)),
     plot.margin = unit(c(1,1,1,1), "cm"))
 
-pdf(paste0(outdir, "/GIPC2_SN2",
+pdf(paste0(outdir, "/PAK3_SN2",
 "_Kapplan_Meyer.pdf"), width = 12, height = 12)
-print(FiguraS22BC)
+print(FiguraS23C)
 dev.off()
 
 
 df <- base[base$Subtipo == "SN3",]
 
 
-FiguraS22BD <- Kapplan_Meyer(cut_survival(df, 150,
+FiguraS23D <- Kapplan_Meyer(cut_survival(df, 150,
 time = "time",
 event = "status"),
-"GIPC2",
+"PAK3",
 "time",
 "status",
 NULL,
 outdir,
-"FiguraS22BD",
+"FiguraS23D",
 c("tomato4", "tomato"),
 width= 8,
 height=8,
@@ -223,7 +223,7 @@ risk.table = T,
 font = 20,
 fontsize = 7) 
 
-FiguraS22BD$table <- FiguraS22BD$table  +
+FiguraS23D$table <- FiguraS23D$table  +
 scale_y_discrete(labels = c("Bajo", "Alto")) +
 theme(axis.title.y = element_blank(),
     axis.text.x = element_text(size = 20),
@@ -231,16 +231,16 @@ theme(axis.title.y = element_blank(),
     axis.text.y = ggtext::element_markdown(size = 20),
     plot.margin = unit(c(1,1,1,1), "cm")
         ) 
-FiguraS22BD$plot <- FiguraS22BD$plot + ggtitle("Mediana GIPC2 SN3") + theme(
+FiguraS23D$plot <- FiguraS23D$plot + ggtitle("Mediana PAK3 SN3") + theme(
     plot.title = element_text(hjust = 0.5,
     vjust= 1, size = 30),
     axis.title.y = element_text(size= 20),
     axis.text.y = element_text(margin = margin(20, 10, 20, 20)),
     plot.margin = unit(c(1,1,1,1), "cm"))
 
-pdf(paste0(outdir, "/GIPC2_SN3",
+pdf(paste0(outdir, "/PAK3_SN3",
 "_Kapplan_Meyer.pdf"), width = 12, height = 12)
-print(FiguraS22BD)
+print(FiguraS23D)
 dev.off()
 
 
@@ -270,44 +270,47 @@ levels(base$Subtipo) <- c("SN1",
 
 
 
-FiguraS22BE <- deg.boxplot(as.data.frame(t(expression)),
+FiguraS23E <- deg.boxplot(as.data.frame(t(expression)),
 base,
 "Tumor.Primario",
 "Subtipo",
 color.fill = c("gold", "cornflowerblue", "tomato1") ,
 outdir = outdir,
-flag = "GIPC2",
-genes = "GIPC2"
+flag = "PAK3",
+genes = "PAK3"
 )
 
 
-FiguraS22BE2 <- deg.boxplot(as.data.frame(t(expression)),
+FiguraS23E2 <- deg.boxplot(as.data.frame(t(expression)),
 base,
 "Subtipo",
 "Subtipo",
+cov = "Tumor.Primario",
 color.fill = c("gold", "cornflowerblue", "tomato1") ,
 outdir = outdir,
-flag = "GIPC2_complete",
-genes = "GIPC2"
+flag = "PAK3_complete",
+genes = "PAK3"
 )
 
-pdf(paste0(outdir, "/FiguraS22.1.pdf"),
+pdf(paste0(outdir, "/FiguraS23.1.pdf"),
 width = 15,
 height = 25)
 
-((FiguraS22BA$plot / FiguraS22BA$table + plot_layout(heights = c(2,1))) | (FiguraS22BB$plot / FiguraS22BB$table + plot_layout(heights = c(2,1)))) /
-((FiguraS22BC$plot / FiguraS22BC$table + plot_layout(heights = c(2,1))) | (FiguraS22BD$plot / FiguraS22BD$table + plot_layout(heights = c(2,1)))) /
- FiguraS22BE
+((FiguraS23A$plot / FiguraS23A$table + plot_layout(heights = c(2,1))) | (FiguraS23B$plot / FiguraS23B$table + plot_layout(heights = c(2,1)))) /
+((FiguraS23C$plot / FiguraS23C$table + plot_layout(heights = c(2,1))) | (FiguraS23D$plot / FiguraS23D$table + plot_layout(heights = c(2,1)))) /
+ FiguraS23E 
+
 dev.off()
 
 
 
-pdf(paste0(outdir, "/FiguraS22.2.pdf"),
+pdf(paste0(outdir, "/FiguraS23.2.pdf"),
 width = 15,
 height = 25)
 
-((FiguraS22BA$plot / FiguraS22BA$table + plot_layout(heights = c(2,1))) | (FiguraS22BB$plot / FiguraS22BB$table + plot_layout(heights = c(2,1)))) /
-((FiguraS22BC$plot / FiguraS22BC$table + plot_layout(heights = c(2,1))) | (FiguraS22BD$plot / FiguraS22BD$table + plot_layout(heights = c(2,1)))) /
- FiguraS22BE2 
+((FiguraS23A$plot / FiguraS23A$table + plot_layout(heights = c(2,1))) | (FiguraS23B$plot / FiguraS23B$table + plot_layout(heights = c(2,1)))) /
+((FiguraS23C$plot / FiguraS23C$table + plot_layout(heights = c(2,1))) | (FiguraS23D$plot / FiguraS23D$table + plot_layout(heights = c(2,1)))) /
+ FiguraS23E2 
 
 dev.off()
+
