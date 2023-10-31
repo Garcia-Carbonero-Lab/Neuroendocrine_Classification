@@ -241,231 +241,6 @@ dev.off()
 
 
 
-gsea <- list.files( paste0(wkdir, "/clustering/gsea"), recursive = F)
-
-gsea <- gsea[grep("fgsea", gsea)]
-gsea <- gsea[grep("txt", gsea)]
-gsea <- gsea[grep("General", gsea,invert = T)]
-gsea <- gsea[grep("Subtypes", gsea,invert = T)]
-gsea <- gsea[grep("pathways", gsea,invert = T)]
-
-gsea <- paste0(wkdir, "/clustering/gsea/", gsea)
-
-gsea <- gsea %>%
-map(read_tsv) %>%
-reduce(bind_rows)
-
-pathways <- c("HALLMARK_OXIDATIVE_PHOSPHORYLATION",
-"HALLMARK_MYC_TARGETS_V1",
-"KEGG_PROTEASOME", "KEGG_RIBOSOME",
-"BIOCARTA_TH1TH2_PATHWAY",
-"BIOCARTA_IL2RB_PATHWAY", "GOBP_HORMONE_METABOLIC_PROCESS",
-"GOBP_EPITHELIAL_CELL_PROLIFERATION",
-"HALLMARK_INFLAMMATORY_RESPONSE",
-"HALLMARK_INTERFERON_GAMMA_RESPONSE",
-"HALLMARK_TNFA_SIGNALING_VIA_NFKB", "KEGG_APOPTOSIS",
-"KEGG_T_CELL_RECEPTOR_SIGNALING_PATHWAY",
-"KEGG_B_CELL_RECEPTOR_SIGNALING_PATHWAY",
-"GOBP_CANONICAL_WNT_SIGNALING_PATHWAY",
-"GOBP_ENDOCRINE_SYSTEM_DEVELOPMENT",
-"KEGG_FOCAL_ADHESION",
-"KEGG_FATTY_ACID_METABOLISM",
-"KEGG_NOTCH_SIGNALING_PATHWAY",
-"KEGG_CELL_CYCLE",
-"HALLMARK_XENOBIOTIC_METABOLISM")
-
-gsea <- gsea %>%
-filter(
-    padj < 0.05,
-    pathway %in% pathways
-) 
-
-
-pathways <- unique(gsea$pathway)
-
-
-gsea1 <- gsea[gsea$group1 == "G1" & gsea$group2 == "G2",]
-gsea2 <- gsea[gsea$group1 == "G1" & gsea$group2 == "G3",]
-gsea3 <- gsea[gsea$group1 == "G2" & gsea$group2 == "G3",]
-
-
-################################################################################
-#Con NES
-#GSEA1
-gsea1 <- gsea1[,c("pathway", "NES", "group1", "group2")]
-
-
-gsea1 <- gsea1 %>%
-pivot_wider(names_from = c(group1,group2), values_from = NES) %>%
-replace(is.na(.), 0) %>%
-transmute(
-    pathway,
-    SN1vsSN2 = G1_G2
-)
-
-pathways_gsea1 <- pathways[!pathways %in% gsea1$pathway]
-
-gsea1 <- rbind(gsea1,data.frame( "pathway"= pathways_gsea1, 
-"SN1vsSN2" = rep(0,length(pathways_gsea1))))
-
-gsea1 <- as.data.frame(gsea1)
-rownames(gsea1) <- gsea1$pathway
-gsea1 <- gsea1[,2,drop=F]
-
-#GSEA2
-gsea2 <- gsea2[,c("pathway", "NES", "group1", "group2")]
-
-
-gsea2 <- gsea2 %>%
-pivot_wider(names_from = c(group1,group2), values_from = NES) %>%
-replace(is.na(.), 0) %>%
-transmute(
-    pathway,
-    SN1vsSN3 = G1_G3
-)
-
-pathways_gsea2 <- pathways[!pathways %in% gsea2$pathway]
-
-gsea2 <- rbind(gsea2,data.frame( "pathway"= pathways_gsea2, 
-"SN1vsSN3" = rep(0,length(pathways_gsea2))))
-
-gsea2 <- as.data.frame(gsea2)
-rownames(gsea2) <- gsea2$pathway
-gsea2 <- gsea2[,2,drop=F]
-
-#GSEA3
-gsea3 <- gsea3[,c("pathway", "NES", "group1", "group2")]
-
-
-gsea3 <- gsea3 %>%
-pivot_wider(names_from = c(group1,group2), values_from = NES) %>%
-replace(is.na(.), 0) %>%
-transmute(
-    pathway,
-    SN2vsSN3 = G2_G3
-)
-
-pathways_gsea3 <- pathways[!pathways %in% gsea3$pathway]
-
-gsea3 <- rbind(gsea3,data.frame( "pathway"= pathways_gsea3, 
-"SN2vsSN3" = rep(0,length(pathways_gsea3))))
-
-gsea3 <- as.data.frame(gsea3)
-rownames(gsea3) <- gsea3$pathway
-gsea3 <- gsea3[,2,drop=F]
-
-##################################################33
-gsea1 <- gsea1[pathways,,drop=F]
-gsea2 <- gsea2[pathways,,drop=F]
-gsea3 <- gsea3[pathways,,drop=F]
-
-gsea_nes <- cbind(gsea1, gsea2)
-gsea_nes <- cbind(gsea_nes, gsea3)
-
-
-
-
-vias <- c("Biocarta TH1TH2",
-"Gobp Metabolismo Hormonal",
-"Gobp Proliferación Epitelial",
-"Hallmark Fosforliación Oxidativa",
-"Hallmark Targets MYC",
-"Hallmark TNFA NFKB",
-"Hallmark Metabolismo de Xenobióticos",
-"Hallmark Interferón Gamma",
-"Hallmark Respuesta Inflamatoria",
-"Kegg Ribosoma",
-"Kegg Ciclo Celular",
-"Kegg Metabolismo de Ácidos Grasos",
-"Kegg Receptor Células B",
-"Kegg Apoptosis",
-"Kegg Receptor Células T")
-
-rownames(gsea_nes) <- vias
-#########################################################################
-#Heatmap
-c("magenta","orange","green")
-
-ha1 <- HeatmapAnnotation("COMPARACIÓN" = c("SN1vsSN2","SN1vsSN3","SN2vsSN3"),
-show_legend = T,
-
-col = list("COMPARACIÓN"= c("SN1vsSN2" = "green",
-"SN1vsSN3" = "orange",
-"SN2vsSN3" = "magenta")),
-
-annotation_name_gp = gpar(fontsize = 60),
-            border = unit(4, "cm"),
-            height = unit(4, "cm"),
-            gp = gpar(fontsize = 80),
-            simple_anno_size_adjust = TRUE,
-            simple_anno_size = unit(4, "cm"),
-                        annotation_legend_param = list(
-        title_gp = gpar(fontsize = 50),
-        labels_gp = gpar(fontsize = 50),
-        labels_gp = gpar(fontsize = 50),
-        grid_height = unit(4, "cm"),
-        grid_width = unit(4, "cm"),
-        gap = unit(100, "mm"),
-        ncol = 3
-    )
-
-
-)
-
-
-color <- colorRamp2(
-                c(min(gsea_nes), 0, max(gsea_nes)),
-                c("blue","white", "red")
-)
-
-
-
-hm1 <- Heatmap(as.matrix(gsea_nes),
-            top_annotation = ha1,
-            show_column_names = F,
-            cluster_columns = F,
-            col = color,
-            gap = unit(5, "mm"),
-            heatmap_legend_param = list(
-                title = "NES",
-                title_position = "topcenter",
-                legend_direction = "horizontal",
-                title_gp = gpar(fontsize = 60),
-                labels_gp = gpar(fontsize = 60,
-                family = "Times", face = "bold"),
-                legend_width = unit(30, "cm"),
-                grid_height = unit(2.5, "cm")
-            ),
-            height = unit(40, "cm"),
-            rect_gp = gpar(col = "black", lwd = 2),
-            show_heatmap_legend = T,
-            show_row_dend = F,
-            row_names_gp = gpar(fontsize = 40),
-            row_names_max_width = unit(200,'cm')
-
-
-        )
-
-
-hlist = hm1 
-
-
-p <- draw(hlist, heatmap_legend_side = "bottom",
-        annotation_legend_side = "top",
-        ht_gap = unit(3, "cm"))
-
-pdf(paste0(
-            outdir, "/GSEA_Figura12.2.pdf"
-        ),
-        width = 40,
-        height = 25
-        )
-        print(p)
-        dev.off()
-
-################################################################################
-
-
 gsea1 <- gsea[gsea$group1 == "G1" & gsea$group2 == "G2",]
 gsea2 <- gsea[gsea$group1 == "G1" & gsea$group2 == "G3",]
 gsea3 <- gsea[gsea$group1 == "G2" & gsea$group2 == "G3",]
@@ -567,21 +342,28 @@ gsea2 <- gsea2[pathways,]
 gsea3 <- gsea3[pathways,]
 
 
-vias <- c("Biocarta TH1TH2",
+vias <- c("Biocarta IL2RB",
 "Gobp Metabolismo Hormonal",
-"Gobp Proliferación Epitelial",
-"Hallmark Fosforliación Oxidativa",
-"Hallmark Targets MYC",
-"Hallmark TNFA NFKB",
-"Hallmark Metabolismo de Xenobióticos",
-"Hallmark Interferón Gamma",
 "Hallmark Respuesta Inflamatoria",
+"Hallmark Interferón Gamma",
+"Hallmark Metabolismo de Xenobióticos",
+"Hallmark Fosforilación Oxidativa",
+"Hallmark TNFA NFKB",
+"Hallmark Targets MYC",
 "Kegg Ribosoma",
-"Kegg Ciclo Celular",
 "Kegg Metabolismo de Ácidos Grasos",
-"Kegg Receptor Células B",
 "Kegg Apoptosis",
-"Kegg Receptor Células T")
+"Kegg Receptor Células T",
+"Kegg Receptor Células B",
+"Kegg Señalización MAPK",
+"Kegg Ciclo Celular",
+"Pid Señalización RB1",
+"Pid Señalización FOXM1",
+"Reactome Oxidaciones Biológicas",
+"Reactome Señalización por Interleucinas",
+"Reactome Sistema Neuronal",
+"Reactome Replicación de ADN"
+)
 
 rownames(gsea1) <- vias
 rownames(gsea2) <- vias
@@ -749,13 +531,10 @@ p <- draw(hlist, heatmap_legend_side = "bottom",
         ht_gap = unit(3, "cm"))
 
 pdf(paste0(
-            outdir, "/GSEA_Figura12.3.pdf"
+            outdir, "/GSEA_Figura12B.pdf"
         ),
         width = 40,
         height = 40
         )
         print(p)
         dev.off()
-
-
-
