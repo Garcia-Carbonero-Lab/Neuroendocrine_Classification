@@ -3,7 +3,7 @@ library(patchwork)
 library(ggplot2)
 
 # we read config file
-config <- read.csv("config/config.template.tsv",
+config <- read.csv("config/config.tsv",
 sep = "\t",
 header = T)
 

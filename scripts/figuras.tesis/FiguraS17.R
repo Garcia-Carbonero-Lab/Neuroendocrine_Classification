@@ -4,7 +4,7 @@ library(tidyverse)
 library(reshape2)
 library(patchwork)
 # we read config file
-config <- read.csv("config/config.template.tsv",
+config <- read.csv("config/config.tsv",
 sep = "\t",
 header = T)
 

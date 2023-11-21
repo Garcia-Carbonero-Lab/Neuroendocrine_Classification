@@ -10,7 +10,7 @@ source("functions/cluster.analysis/additional.functions.R")
 source("functions/cluster.analysis/clinical.functions.R")
 
 # we read config file
-config <- read.csv("config/config.template.tsv",
+config <- read.csv("config/config.tsv",
 sep = "\t",
 header = T)
 

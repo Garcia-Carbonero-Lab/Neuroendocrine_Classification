@@ -6,7 +6,7 @@ library(ggradar)
 library(scales)
 library(fmsb)
 # we read config file
-config <- read.csv("config/config.template.tsv",
+config <- read.csv("config/config.tsv",
 sep = "\t",
 header = T)
 
@@ -69,7 +69,7 @@ master <- read.table(paste0(wkdir,
 
 genes <- c("CHGA","CHGB",
 "PTPRN","BEX1",
-"GSTA1", "FBP1", "FABP1","PIGR" ,"SPINK1", "GJD2",
+"GSTA1", "FBP1", "FABP1","PIGR" ,"NOVA1", "GJD2",
 "GRB10", "HEPACAM2")
 
 masteres <- c(
