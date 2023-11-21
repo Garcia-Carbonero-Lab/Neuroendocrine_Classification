@@ -68,8 +68,8 @@ master <- read.table(paste0(wkdir,
 
 
 genes <- c("CHGA","CHGB",
-"PTPRN","BEX1",
-"GSTA1", "FBP1", "FABP1","PIGR" ,"NOVA1", "GJD2",
+"PTPRN","BEX1", "NOVA1",
+"GSTA1", "FBP1", "FABP1","PIGR", "GJD2",
 "GRB10", "HEPACAM2")
 
 masteres <- c(

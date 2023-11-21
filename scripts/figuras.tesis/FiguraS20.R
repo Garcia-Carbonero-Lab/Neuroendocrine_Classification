@@ -48,6 +48,9 @@ base$PRIMARY_TUMOR <- as.factor(base$PRIMARY_TUMOR)
 levels(base$PRIMARY_TUMOR) <- c("Colorrectal",
 "Estómago", "Pulmón", "Páncreas", "I.Delgado")
 
+base$PRIMARY_TUMOR  <- factor(base$PRIMARY_TUMOR, levels =c("Colorrectal",
+"Estómago", "I.Delgado", "Páncreas", "Pulmón") )
+
 
 base <- base %>%
     transmute(
@@ -86,7 +89,7 @@ met_anot <- create.met.anot(epic)
 genes <- c("GIPC2",
 "CHGA",
 "PIGR",
-"SPINK1",
+"NOVA1",
 "LGALS4",
 "PTPRN",
 "CHGB")
@@ -94,7 +97,7 @@ genes <- c("GIPC2",
 probes <- c("cg26947773",
 "cg19433225",
 "cg02244697",
-"cg01309011",
+"cg04974854",
 "cg19419519",
 "cg03970036",
 "cg20851464")
@@ -141,5 +144,6 @@ subtipo <- subtipo[subtipo$CpG %in% probes,]
 
 write.table(subtipo, paste0(outdir, "/Tabla_subtipo.tsv"),
 sep = "\t", row.names = F, col.names = T)
+
 
 

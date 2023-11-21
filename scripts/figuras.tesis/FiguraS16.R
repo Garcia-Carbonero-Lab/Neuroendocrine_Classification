@@ -95,8 +95,8 @@ l_colors <- list(
 rownames(exp) <- gsub("-","_",rownames(exp))
 
 genes <- c("CHGA","CHGB",
-"PTPRN","BEX1",
-"GSTA1", "FBP1", "FABP1","PIGR" ,"SPINK1", "GJD2",
+"PTPRN","BEX1", "NOVA1",
+"GSTA1", "FBP1", "FABP1","PIGR", "GJD2",
 "GRB10", "HEPACAM2")
 
 
