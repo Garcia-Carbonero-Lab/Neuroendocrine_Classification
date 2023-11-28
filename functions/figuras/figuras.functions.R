@@ -2200,3 +2200,72 @@ flag
     )
     return <- sur.df
     }
+
+
+
+
+#function:corr_pca_lf
+#input:
+#      data: data.frame with omics features in rows and samples in columns
+#      mod: MOFA model
+#      outdir: Path to write results
+#      flag: Name to add in the name of files
+
+#output: heatmap showing the correlation between latent factors and PCA
+
+#description:function to create the heatmap showing the correlation between latent factors and PCA
+
+corr_pca_lf <- function(data, mod, outdir,flag){
+Z <- obtain_Z(mod)
+pcal <- prcomp(t(data), scale. = F)
+pca <- as.data.frame(pcal$x[, 1:10])
+pca <- pca[rownames(Z),]
+corrt <- cor(Z,pca, method = "pearson") 
+corrt <- abs(corrt)
+write.table(corrt,
+paste0(outdir, "/", flag, "_Correlation_PCA.txt"),
+sep = "\t",
+row.names = T,
+col.names = NA)
+corrt <- corrt[order(row.names(corrt), decreasing = T),]
+
+hm <- Heatmap(as.matrix(corrt),
+            show_row_names = T,
+            show_column_names = T,
+            col = colorRamp2(
+                c(1, 0),
+                c("red", "white")
+            ),
+            name = "Heatmap",
+            gap = unit(5, "mm"),
+            cluster_rows = F,
+            show_row_dend = F,
+            cluster_columns = F,
+            clustering_distance_rows = "spearman",
+            heatmap_legend_param = list(
+                title = "Correlación Absoluta",
+                title_position = "topcenter",
+                legend_direction = "horizontal",
+                title_gp = gpar(fontsize = 40),
+                labels_gp = gpar(fontsize = 40,
+                family = "Times", face = "bold"),
+                legend_width = unit(20, "cm"),
+                grid_height = unit(2, "cm")
+            ),
+            row_names_side = "left",
+            row_names_gp = gpar(fontsize = 36),
+            column_names_gp = gpar(fontsize = 36)
+        )
+
+        p <- draw(hm, heatmap_legend_side = "bottom",
+        padding = unit(c(2, 120, 2, 2), "mm"))
+
+        pdf(paste0(
+            outdir,  "/",flag,"_PCA_Factors.pdf"
+        ),
+        width = 20, height = 20)
+        print(p)
+        dev.off()
+
+
+}
