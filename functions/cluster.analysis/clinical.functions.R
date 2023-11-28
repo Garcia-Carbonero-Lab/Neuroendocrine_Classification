@@ -165,6 +165,10 @@ stat.test <- dfa %>%
   add_significance("p.adj") %>%
   add_xy_position(x = group.x, dodge = 0.8)
 
+median <- dfa[,c(feature,group.x, group.fill)] %>% 
+    group_by_at(vars(one_of(c(group.x,group.fill)))) %>%
+    get_summary_stats(type = "median")
+
 we <- dfa %>%
   group_by_at(vars(group.x)) %>%
   wilcox_effsize(as.formula(paste0(feature, "~", group.fill)))
@@ -198,6 +202,12 @@ stat.test <- dfa %>%
   adjust_pvalue(method = "BH") %>%
   add_significance("p.adj") %>%
   add_xy_position(x = group.x, dodge = 0.8)
+
+median <- dfa[,c(feature, group.fill)] %>% 
+    group_by_at(vars(group.fill)) %>%
+    get_summary_stats(type = "median") 
+
+
 
 stat.test <- stat.test %>% 
 unite(col= "order", c(group1:group2), sep = "_",
@@ -278,5 +288,10 @@ sep = "\t",
 row.names = F,
 col.names = T)
 
-
+write.table(
+median,
+file = paste0(outdir, "/", flag, "/Median.table.txt"),
+sep = "\t",
+row.names = F,
+col.names = T)
 }

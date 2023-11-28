@@ -170,7 +170,19 @@ levels )
     # Obtain results of Wilcoxon test
     stat_df <- compare_means(as.formula(paste0(factor, " ~ ", column)),
         group.by = group, data = cli.df, p.adjust.method = "fdr"
-    )
+    ) 
+    
+    median <- cli.df[,c(column,group, factor)] %>% 
+    group_by_at(vars(one_of(c(group,column)))) %>%
+    get_summary_stats(type = "median") 
+
+    write.table(median,
+     paste0(
+            outdir, "/discrete.variables/",
+            flag, "/", column, "/Medians", flag,
+            "_", column, "_", factor, ".tsv"),
+    sep = "\t",
+    col.names = T)
 
     # Calculate effect size
     we <- cli.df  %>% 
@@ -297,6 +309,20 @@ is.model = T) {
     data = cli.df, p.adjust.method = "BH"
     )
     
+    median <- cli.df[,c(column, factor)] %>% 
+    group_by_at(vars(column)) %>%
+    get_summary_stats(type = "median") 
+
+    write.table(median,
+     paste0(
+            outdir, "/discrete.variables/",
+            flag, "/", column, "/Medians_Complete", flag,
+            "_", column, "_", factor, ".tsv"),
+    sep = "\t",
+    col.names = T)
+
+
+
     we <- wilcox_effsize(data = cli.df,
     as.formula(paste0(factor, " ~ ", column)))
     

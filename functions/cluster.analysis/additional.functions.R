@@ -163,13 +163,27 @@ stat.test <- df %>%
   wilcox_test(as.formula(paste0(row, "~", group.fill))) %>%
   adjust_pvalue(method = "fdr") %>%
   add_significance("p.adj")
+
+   median <- df[,c(row,group.x, group.fill)] %>% 
+    group_by_at(vars(one_of(c(group.x,group.fill)))) %>%
+    get_summary_stats(type = "median")
 }else{
 stat.test <- df %>%
   wilcox_test(as.formula(paste0(row, "~", group.fill))) %>%
   adjust_pvalue(method = "fdr") %>%
   add_significance("p.adj")
 
+  median <- df[,c(row, group.fill)] %>% 
+    group_by_at(vars(group.fill)) %>%
+    get_summary_stats(type = "median") 
+
 }
+
+
+
+
+
+
 
 
 stats[[row]] <- as.data.frame(stat.test)
@@ -219,7 +233,14 @@ paste0(outdir, "/Wilcox_", flag, ".txt"),
 sep = "\t",
 row.names = F,
 col.names = T)
+
+write.table(median,
+paste0(outdir, "/Median_", flag, ".txt"),
+sep = "\t",
+row.names = F,
+col.names = T)
 }
+
 
 #function:heatmap.molecular
 #input:
