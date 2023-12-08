@@ -180,13 +180,17 @@ stat.test <- df %>%
 }
 
 
+median_l <- lapply(1:nrow(stat.test), function(x){
+dfmedian <- data.frame(median_group_1 = 
+median$median[median$Subtype == stat.test[[x,"group1"]]],
+median_group_2 = 
+median$median[median$Subtype == stat.test[[x,"group2"]]]
+)
+})
 
+median <- do.call(rbind,median_l)
 
-
-
-
-
-stats[[row]] <- as.data.frame(stat.test)
+stats[[row]] <- as.data.frame(cbind(stat.test,median))
 
 stat.test <- stat.test %>%
   add_xy_position(x = group.x, dodge = 0.8)
@@ -224,6 +228,7 @@ ggsave(
         height = 12
     )
 
+
 }
 
 stats <- do.call(rbind,stats)
@@ -234,11 +239,6 @@ sep = "\t",
 row.names = F,
 col.names = T)
 
-write.table(median,
-paste0(outdir, "/Median_", flag, ".txt"),
-sep = "\t",
-row.names = F,
-col.names = T)
 }
 
 

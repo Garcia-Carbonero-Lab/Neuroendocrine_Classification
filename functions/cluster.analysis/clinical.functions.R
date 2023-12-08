@@ -277,21 +277,31 @@ ggsave(
         height = height
     )
 
+
+write.table(
+median,
+file = paste0(outdir, "/", flag, "/Median",feature,".table.txt"),
+sep = "\t",
+row.names = F,
+col.names = T)
+
 }
 stat.df <- stat.df %>% bind_rows()
 stat.df <- stat.df[!duplicated(stat.df),]
 
+if (ncol(stat.df) == 19){
+stat.df = stat.df[,c(1:12,18:19)]
+}else{
+  stat.df = stat.df[,c(1:10,16:17)]
+
+}
+
+
 write.table(
-stat.df[,c(1:12,18:19)],
+stat.df,
 file = paste0(outdir, "/", flag, "/Wilcoxon.table.txt"),
 sep = "\t",
 row.names = F,
 col.names = T)
 
-write.table(
-median,
-file = paste0(outdir, "/", flag, "/Median.table.txt"),
-sep = "\t",
-row.names = F,
-col.names = T)
 }
