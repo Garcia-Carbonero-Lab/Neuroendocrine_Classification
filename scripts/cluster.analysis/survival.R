@@ -40,6 +40,13 @@ base <- read.csv(paste0(datadir, "/clinical_data.txt"),
 base$Subtype <- as.character(base$Subtype)
 base$PRIMARY_TUMOR <- factor(base$PRIMARY_TUMOR,
 levels = c("GASTRIC","COLORECTAL", "LUNG", "PANCREAS", "SMALL INTESTINE"))
+############################################
+# median and range of follow up
+
+base_alive <- base[base$EXITUS == 0,]
+median(base_alive$OS.time)
+min(base_alive$OS.time)
+min(base_alive$OS.time)
 
 
 # Create univariate cox model of features known to be related to OS
